@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:src="@drawable/xui"
+        android:layout_width="match_parent"
+        android:layout_height="260.5dp"
+        android:id="@+id/imageView1" />
+    <TextView
+        android:text="Xui"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:gravity="center" />
+    <TextView
+        android:text="IS Currently Located AT"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:gravity="center" />
+    <TextView
+        android:text="Room S515"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center" />
+    <ImageView
+        android:src="@android:drawable/ic_menu_gallery"
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="150.0dp" />
+</LinearLayout>

@@ -22,9 +22,34 @@ namespace Spoteam_App
 
             // Get our button from the layout resource,
             // and attach an event to it
-            Button button = FindViewById<Button>(Resource.Id.MyButton);
+            Button button = FindViewById<Button>(Resource.Id.location_button1);
+            //Button Buttonaccept = FindViewById<Button>(Resource.Id.btn_accept);
+            //Button Buttondeny = FindViewById<Button>(Resource.Id.btn_deny);
 
-            button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
+            //button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
+
+            button.Click += delegate { locationrequestpage(); };
+            //Buttonaccept.Click += delegate { SetContentView(Resource.Layout.RequestAccepted); };
+            //Buttondeny.Click += delegate { SetContentView(Resource.Layout.Main); };
+        }
+        private void locationrequestpage()
+        {
+            SetContentView(Resource.Layout.LocationRequest);
+
+            Button Buttonaccept = FindViewById<Button>(Resource.Id.btn_accept);
+            Button Buttondeny = FindViewById<Button>(Resource.Id.btn_deny);
+            Buttonaccept.Click += delegate { locationacceptedrespond(); };
+            Buttondeny.Click += delegate { locationdenyedrespond(); };
+        }
+        private void locationacceptedrespond()
+        {
+            SetContentView(Resource.Layout.RequestAccepted);
+        }
+        private void locationdenyedrespond()
+        {
+            SetContentView(Resource.Layout.Main);
+            Button button = FindViewById<Button>(Resource.Id.location_button1);
+            button.Click += delegate { locationrequestpage(); };
         }
     }
 }
