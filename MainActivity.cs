@@ -23,14 +23,14 @@ namespace Spoteam_App
             // Get our button from the layout resource,
             // and attach an event to it
             Button button = FindViewById<Button>(Resource.Id.location_button1);
-            //Button Buttonaccept = FindViewById<Button>(Resource.Id.btn_accept);
-            //Button Buttondeny = FindViewById<Button>(Resource.Id.btn_deny);
 
-            //button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
+            Button tab_individual_btn = FindViewById<Button>(Resource.Id.btn_individual);
+            Button tab_group_btn = FindViewById<Button>(Resource.Id.btn_individual);
+            Button tab_profile_btn = FindViewById<Button>(Resource.Id.btn_profile);
 
             button.Click += delegate { locationrequestpage(); };
-            //Buttonaccept.Click += delegate { SetContentView(Resource.Layout.RequestAccepted); };
-            //Buttondeny.Click += delegate { SetContentView(Resource.Layout.Main); };
+            tab_individual_btn.Click += delegate { individualpage(); };
+            tab_profile_btn.Click += delegate { profilepage(); };
         }
         private void locationrequestpage()
         {
@@ -38,18 +38,43 @@ namespace Spoteam_App
 
             Button Buttonaccept = FindViewById<Button>(Resource.Id.btn_accept);
             Button Buttondeny = FindViewById<Button>(Resource.Id.btn_deny);
-            Buttonaccept.Click += delegate { locationacceptedrespond(); };
-            Buttondeny.Click += delegate { locationdenyedrespond(); };
+            Buttonaccept.Click += delegate { acceptedrespondpage(); };
+            Buttondeny.Click += delegate { denyrespondpage(); };
         }
-        private void locationacceptedrespond()
+        private void acceptedrespondpage()
         {
             SetContentView(Resource.Layout.RequestAccepted);
         }
-        private void locationdenyedrespond()
+        private void denyrespondpage()
+        {
+            SetContentView(Resource.Layout.Busy);
+            Button Buttontry = FindViewById<Button>(Resource.Id.btn_tryagain);
+            Buttontry.Click += delegate { individualpage(); };
+
+        }
+
+        private void individualpage()
         {
             SetContentView(Resource.Layout.Main);
+            tapbuttonevent();
             Button button = FindViewById<Button>(Resource.Id.location_button1);
             button.Click += delegate { locationrequestpage(); };
+        }
+        private void profilepage()
+        {
+            SetContentView(Resource.Layout.ProfileSetting);
+            tapbuttonevent();
+        }
+
+        private void tapbuttonevent()
+        {
+
+            Button tab_individual_btn = FindViewById<Button>(Resource.Id.btn_individual);
+            Button tab_group_btn = FindViewById<Button>(Resource.Id.btn_group);
+            Button tab_profile_btn = FindViewById<Button>(Resource.Id.btn_profile);
+
+            tab_individual_btn.Click += delegate { individualpage(); };
+            tab_profile_btn.Click += delegate { profilepage(); };
         }
     }
 }
