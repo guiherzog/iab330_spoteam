@@ -23,18 +23,13 @@ namespace Spoteam_App
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
-
+            tapbuttonevent();
             // Get our button from the layout resource,
             // and attach an event to it
             Button button = FindViewById<Button>(Resource.Id.location_button1);
 
-            Button tab_individual_btn = FindViewById<Button>(Resource.Id.btn_individual);
-            Button tab_group_btn = FindViewById<Button>(Resource.Id.btn_individual);
-            Button tab_profile_btn = FindViewById<Button>(Resource.Id.btn_profile);
-
             button.Click += delegate { locationrequestpage(); };
-            tab_individual_btn.Click += delegate { individualpage(); };
-            tab_profile_btn.Click += delegate { profilepage(); };
+
         }
         private void locationrequestpage()
         {
@@ -48,6 +43,8 @@ namespace Spoteam_App
         private void acceptedrespondpage()
         {
             SetContentView(Resource.Layout.RequestAccepted);
+            Button Buttonback = FindViewById<Button>(Resource.Id.btn_back);
+            Buttonback.Click += delegate { individualpage(); };
         }
         private void denyrespondpage()
         {
@@ -64,6 +61,16 @@ namespace Spoteam_App
             Button button = FindViewById<Button>(Resource.Id.location_button1);
             button.Click += delegate { locationrequestpage(); };
         }
+
+        private void grouppage()
+        {
+            SetContentView(Resource.Layout.Group);
+            tapbuttonevent();
+
+            Button button = FindViewById<Button>(Resource.Id.group_button1);
+            button.Click += delegate { individualpage(); };
+        } 
+
         private void profilepage()
         {
             SetContentView(Resource.Layout.ProfileSetting);
@@ -78,6 +85,7 @@ namespace Spoteam_App
             Button tab_profile_btn = FindViewById<Button>(Resource.Id.btn_profile);
 
             tab_individual_btn.Click += delegate { individualpage(); };
+            tab_group_btn.Click += delegate { grouppage(); };
             tab_profile_btn.Click += delegate { profilepage(); };
         }
     }

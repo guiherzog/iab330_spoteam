@@ -63,15 +63,15 @@
         android:id="@+id/linearLayout2"
         android:layout_gravity="center">
         <Button
+          android:text="Group"
+          android:layout_width="125.0dp"
+          android:layout_height="wrap_content"
+          android:id="@+id/btn_group" />
+        <Button
             android:text="Individual"
             android:layout_width="125.0dp"
             android:layout_height="wrap_content"
             android:id="@+id/btn_individual" />
-        <Button
-            android:text="Group"
-            android:layout_width="125.0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/btn_Group" />
         <Button
             android:text="Profile"
             android:layout_width="125.0dp"
