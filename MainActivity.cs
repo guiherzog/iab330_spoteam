@@ -1,4 +1,8 @@
-﻿using System;
+﻿//
+// Author: Month Yean KOH N9070095
+//
+
+using System;
 using Android.App;
 using Android.Content;
 using Android.Runtime;
