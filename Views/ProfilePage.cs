@@ -4,13 +4,13 @@ using MvvmCross.Droid.Views;
 
 namespace Spoteam_App.Views
 {
-    [Activity(Label = "View for MainViewModel")]
-    public class Main : MvxActivity
+    [Activity(Label = "View for ProfilePageViewModel")]
+    public class ProfilePage : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            SetContentView(Resource.Layout.Main);
+            SetContentView(Resource.Layout.ProfileSetting);
         }
     }
 }

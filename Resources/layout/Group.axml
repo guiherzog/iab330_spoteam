@@ -133,20 +133,20 @@
             android:text="Group"
             android:layout_width="125.0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/btn_group" 
-      local:MvxBind="Click GroupPageCommand" />
+            android:id="@+id/btn_group"
+            local:MvxBind="Click GroupPageCommand" />
         <Button
             android:text="Individual"
             android:layout_width="125.0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/btn_individual" 
-      local:MvxBind="Click TeamPageCommand" />
+            android:id="@+id/btn_individual"
+            local:MvxBind="Click TeamPageCommand" />
         <Button
             android:text="Profile"
             android:layout_width="125.0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:id="@+id/btn_profile" 
-    local:MvxBind="Click ProfilePageCommand" />
+            android:id="@+id/btn_profile"
+            local:MvxBind="Click ProfilePageCommand" />
     </LinearLayout>
 </LinearLayout>

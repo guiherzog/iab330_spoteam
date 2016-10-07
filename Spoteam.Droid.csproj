@@ -92,7 +92,8 @@
     <Compile Include="Views\LocationAccept.cs" />
     <Compile Include="Views\LocationRequest.cs" />
     <Compile Include="Views\GroupPage.cs" />
-    <Compile Include="Views\Main.cs" />
+    <Compile Include="Views\ProfilePage.cs" />
+    <Compile Include="Views\TeamPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />
@@ -118,7 +119,7 @@
     <AndroidResource Include="Resources\layout\SecondView.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Main.axml">
+    <AndroidResource Include="Resources\layout\TeamPage.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
