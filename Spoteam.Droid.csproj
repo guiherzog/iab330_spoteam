@@ -93,6 +93,7 @@
     <Compile Include="Views\LocationRequest.cs" />
     <Compile Include="Views\GroupPage.cs" />
     <Compile Include="Views\ProfilePage.cs" />
+    <Compile Include="Views\SecondView.cs" />
     <Compile Include="Views\TeamPage.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -117,6 +118,9 @@
     </AndroidResource>
     <AndroidResource Include="Resources\layout\SplashScreen.axml" />
     <AndroidResource Include="Resources\layout\SecondView.axml" />
+    <AndroidResource Include="Resources\layout\UserSearchLayout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\TeamPage.axml">

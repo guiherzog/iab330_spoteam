@@ -7,9 +7,9 @@ namespace Spoteam_App.Views
     [Activity(Label = "View for GroupPage")]
     public class GroupPage : MvxActivity
     {
-        protected override void OnCreate(Bundle bundle)
+        protected override void OnCreate(Bundle group)
         {
-            base.OnCreate(bundle);
+            base.OnCreate(group);
             SetContentView(Resource.Layout.Group);
         }
     }
