@@ -5,15 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
   <TextView
-      android:layout_width="fill_parent"
+      android:textSize="50dp"
+      android:textAppearance="?android:attr/textAppearanceLarge"
+      android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      local:MvxBind="Text City" />
+      android:id="@+id/textView1"
+      android:layout_gravity="center"
+      android:textAlignment="center"
+      android:gravity="center"
+        local:MvxBind="Text UserName" />
+  <ImageView
+      android:layout_width="match_parent"
+      android:layout_height="260.5dp"
+      local:MvxBind="DrawableName UserIcon"
+      android:layout_column="0" />
   <TextView
-      android:layout_width="fill_parent"
-      android:layout_height="wrap_content"
-      local:MvxBind="Text MinimumTemperature" />
+    android:text="IS Currently Located AT"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/textView2"
+    android:gravity="center" />
   <TextView
-      android:layout_width="fill_parent"
+     
+      android:textAppearance="?android:attr/textAppearanceLarge"
+      android:textSize="100dp"
+      android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      local:MvxBind="Text MaximumTemperature" />
+      android:gravity="center"
+        local:MvxBind="Text UserLocation" />
 </LinearLayout>
+
