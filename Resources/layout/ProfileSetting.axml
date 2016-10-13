@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -63,20 +64,23 @@
         android:id="@+id/linearLayout2"
         android:layout_gravity="center">
         <Button
-          android:text="Group"
-          android:layout_width="125.0dp"
-          android:layout_height="wrap_content"
-          android:id="@+id/btn_group" />
+            android:text="Group"
+            android:layout_width="125.0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_group"
+            local:MvxBind="Click GroupPageCommand" />
         <Button
             android:text="Individual"
             android:layout_width="125.0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/btn_individual" />
+            android:id="@+id/btn_individual"
+            local:MvxBind="Click TeamPageCommand" />
         <Button
             android:text="Profile"
             android:layout_width="125.0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:id="@+id/btn_profile" />
+            android:id="@+id/btn_profile"
+            local:MvxBind="Click ProfilePageCommand" />
     </LinearLayout>
 </LinearLayout>
