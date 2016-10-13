@@ -14,7 +14,7 @@
       android:layout_width="fill_parent"
       android:layout_height="wrap_content"
       android:textSize="40dp"
-      local:MvxBind="ItemsSource userLocations; ItemClick SelectUserCommand"
+      local:MvxBind="ItemsSource UserSearchList; ItemClick SelectUserCommand"
       local:MvxItemTemplate="@layout/usersearchlayout" 
       android:layout_weight="70" />
   <TableLayout
