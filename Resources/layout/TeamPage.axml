@@ -7,8 +7,9 @@
   <EditText
       android:layout_width="fill_parent"
       android:layout_height="wrap_content"
-      android:hint="Search for a location"
-      local:MvxBind="Text SearchTerm" />
+      android:hint="Search for a User"
+      local:MvxBind="Text SearchTerm" 
+      android:layout_weight="5" />
   <MvxListView
       android:layout_width="fill_parent"
       android:layout_height="wrap_content"
