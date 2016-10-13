@@ -4,25 +4,40 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+  <TableLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tableLayout1"
+        android:layout_marginBottom="0.0dp"
+        android:stretchColumns="2">
     <TableRow
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-        <ImageView
-            android:layout_width="200px"
-            android:layout_height="200px"
-            local:MvxBind="DrawableName UserIcon"
-            android:layout_column="0" />
-        <TextView
-            android:textSize="30dp"
-            local:MvxBind="Text UserName"
-            android:layout_column="1" />
-        <TextView
-            android:minWidth="50px"
-            android:minHeight="50px"
-            android:layout_column="2" />
-        <TextView
-            android:textSize="20dp"
-            local:MvxBind="Text UserLocation"
-            android:layout_column="3" />
+      <ImageView
+          android:layout_width="200px"
+          android:layout_height="200px"
+          local:MvxBind="DrawableName UserIcon"
+          android:layout_column="0"
+          android:layout_marginRight="10.0dp" />
+      <TextView
+          android:textSize="30dp"
+          android:layout_width="100dp"
+          local:MvxBind="Text UserName"
+          android:gravity="left"
+          android:layout_column="1" />
+      <TextView
+          android:minWidth="50px"
+          android:minHeight="50px"
+          android:gravity="center"
+          android:layout_column="2" />
+      <TextView
+          android:textSize="20dp"
+          android:gravity="center"
+          local:MvxBind="Text UserLocation"
+          android:layout_column="3"
+          android:layout_marginRight="10.0dp" />
     </TableRow>
+  </TableLayout>
 </LinearLayout>
