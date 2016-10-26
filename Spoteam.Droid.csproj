@@ -160,15 +160,15 @@
     <AndroidResource Include="Resources\drawable\teamlogo\og2.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Spoteam.Core\Spoteam.Core.csproj">
-      <Project>{80c12b3a-573f-4482-b1b1-974d9cb4f5ad}</Project>
-      <Name>Spoteam.Core</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\values\SplashStyle.xml" />
     <AndroidResource Include="Resources\drawable\splash.png" />
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Spoteam.Core\Spoteam.Core.csproj">
+      <Project>{80c12b3a-573f-4482-b1b1-974d9cb4f5ad}</Project>
+      <Name>Spoteam.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
