@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spoteam.Droid", "Spoteam.Droid.csproj", "{9CE5F53F-C959-42C5-A3B1-A7504B4C5B8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spoteam.Core", "..\Spoteam.Core\Spoteam.Core.csproj", "{80C12B3A-573F-4482-B1B1-974D9CB4F5AD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spoteam.Core", "Spoteam.Core\Spoteam.Core.csproj", "{80C12B3A-573F-4482-B1B1-974D9CB4F5AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
