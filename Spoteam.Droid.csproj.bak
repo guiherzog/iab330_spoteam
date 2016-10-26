@@ -88,6 +88,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="SplashScreen.cs" />
+    <Compile Include="Views\JoinPage.cs" />
     <Compile Include="Views\LocationDeny.cs" />
     <Compile Include="Views\LocationAccept.cs" />
     <Compile Include="Views\LocationRequest.cs" />
@@ -121,6 +122,9 @@
     <AndroidResource Include="Resources\layout\UserSearchLayout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\Join.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\TeamPage.axml">
@@ -131,7 +135,7 @@
     <AndroidResource Include="Resources\values\Strings.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Icon.png" />
+    <AndroidResource Include="Resources\drawable\icon.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
@@ -160,15 +164,14 @@
     <AndroidResource Include="Resources\drawable\teamlogo\og2.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Spoteam.Core\Spoteam.Core.csproj">
+    <AndroidResource Include="Resources\values\SplashStyle.xml" />
+    <AndroidResource Include="Resources\drawable\splash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Spoteam.Core\Spoteam.Core.csproj">
       <Project>{80c12b3a-573f-4482-b1b1-974d9cb4f5ad}</Project>
       <Name>Spoteam.Core</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\values\SplashStyle.xml" />
-    <AndroidResource Include="Resources\drawable\splash.png" />
-    <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
