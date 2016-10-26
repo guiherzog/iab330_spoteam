@@ -12,7 +12,8 @@
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="500dp"
-        android:id="@+id/linearLayout3">
+        android:id="@+id/linearLayout3"
+        android:background="#333">
         <ImageView
             android:src="@drawable/xui"
             android:layout_width="match_parent"
@@ -26,7 +27,8 @@
             android:id="@+id/textView1"
             android:layout_gravity="center"
             android:textAlignment="center"
-            android:gravity="center" />
+            android:gravity="center"
+            android:padding="10dp" />
         <RadioGroup
             android:minWidth="25px"
             android:minHeight="25px"
@@ -38,23 +40,31 @@
                 android:layout_height="wrap_content"
                 android:checked="true"
                 android:text="Automatic Request Location"
-                android:id="@+id/radioButton1" />
+                android:id="@+id/radioButton1"
+                android:textColor="#000"
+                android:layout_gravity="center_horizontal" />
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
                 android:text="Ask For Location"
-                android:id="@+id/radioButton2" />
+                android:id="@+id/radioButton2"
+                android:textColor="#000"
+                android:layout_gravity="center_horizontal" />
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Do Not Disturb"
-                android:id="@+id/radioButton3" />
+                android:id="@+id/radioButton3"
+                android:textColor="#000"
+                android:layout_gravity="center_horizontal" />
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Offline"
-                android:id="@+id/radioButton4" />
+                android:id="@+id/radioButton4"
+                android:textColor="#000"
+                android:layout_gravity="center_horizontal" />
         </RadioGroup>
     </LinearLayout>
     <LinearLayout
@@ -62,25 +72,36 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout2"
-        android:layout_gravity="center">
+        android:layout_gravity="bottom"
+        android:layout_weight="1"
+        android:minHeight="50dp">
         <Button
             android:text="Group"
-            android:layout_width="125.0dp"
-            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:id="@+id/btn_group"
-            local:MvxBind="Click GroupPageCommand" />
+            local:MvxBind="Click GroupPageCommand"
+            android:background="#595f6d"
+            android:textColor="#efefef" />
         <Button
             android:text="Individual"
-            android:layout_width="125.0dp"
-            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:id="@+id/btn_individual"
-            local:MvxBind="Click TeamPageCommand" />
+            local:MvxBind="Click TeamPageCommand"
+            android:background="#595f6d"
+            android:textColor="#efefef" />
         <Button
             android:text="Profile"
-            android:layout_width="125.0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:id="@+id/btn_profile"
-            local:MvxBind="Click ProfilePageCommand" />
+            local:MvxBind="Click ProfilePageCommand"
+            android:background="#595f6d"
+            android:textColor="#efefef"
+            android:layout_marginRight="0.0dp" />
     </LinearLayout>
 </LinearLayout>

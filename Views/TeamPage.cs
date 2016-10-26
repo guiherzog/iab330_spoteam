@@ -4,7 +4,7 @@ using MvvmCross.Droid.Views;
 
 namespace Spoteam_App.Views
 {
-    [Activity(Label = "View for TeamPageViewModel")]
+    [Activity(Label = "My Team")]
     public class TeamPage : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)

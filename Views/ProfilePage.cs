@@ -4,7 +4,7 @@ using MvvmCross.Droid.Views;
 
 namespace Spoteam_App.Views
 {
-    [Activity(Label = "View for ProfilePageViewModel")]
+    [Activity(Label = "My Account")]
     public class ProfilePage : MvxActivity
     {
         protected override void OnCreate(Bundle profilepage)

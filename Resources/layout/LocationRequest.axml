@@ -37,8 +37,8 @@
             android:text="Deny"
             android:layout_height="match_parent"
             android:id="@+id/btn_deny"
-            android:layout_width="150dp" 
-            local:MvxBind="Click UserDenyCommand"/>
+            android:layout_width="150dp"
+            local:MvxBind="Click UserDenyCommand" />
         <Space
             android:layout_width="50dp"
             android:layout_height="match_parent"
@@ -47,7 +47,7 @@
             android:text="Accept"
             android:layout_width="150dp"
             android:layout_height="match_parent"
-            android:id="@+id/btn_accept" 
-            local:MvxBind="Click UserAcceptCommand"/>
+            android:id="@+id/btn_accept"
+            local:MvxBind="Click UserAcceptCommand" />
     </LinearLayout>
 </LinearLayout>

@@ -4,7 +4,7 @@ using MvvmCross.Droid.Views;
 
 namespace Spoteam_App.Views
 {
-    [Activity(Label = "View for LocationAccept")]
+    [Activity(Label = "Location Accepted")]
     public class LocationAccept : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)

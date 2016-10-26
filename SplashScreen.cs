@@ -5,9 +5,9 @@ using MvvmCross.Droid.Views;
 namespace Spoteam_App
 {
     [Activity(
-        Label = "Spoteam_App"
+        Label = "SpoTeam"
         , MainLauncher = true
-        //, Icon = "@mipmap/icon"
+        , Icon = "@drawable/icon"
         , Theme = "@style/Theme.Splash"
         , NoHistory = true
         , ScreenOrientation = ScreenOrientation.Portrait)]

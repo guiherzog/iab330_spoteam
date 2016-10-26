@@ -15,10 +15,5 @@ namespace Spoteam_App
         {
             return new Spoteam.Core.App();
         }
-
-        //protected override IMvxTrace CreateDebugTrace()
-        //{
-        //    return new DebugTrace();
-        //}
     }
 }
