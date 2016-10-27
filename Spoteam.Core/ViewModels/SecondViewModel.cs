@@ -58,9 +58,9 @@ namespace Spoteam.Core.ViewModels
         public async void GetUsers() {
             SelectResult result = await spoteamAPI.RefreshDataAsync();
             Debug.WriteLine("Result.status = " + result.status);
-            //foreach (var item in items) {
-            //    Debug.WriteLine(item.ToString());
-            //}
+            foreach (var row in result.rows) {
+                Debug.WriteLine("User " + row.name + " - Email: " + row.email + " - Image: " + row.image + " - Location: " + row.location + " - Status: " + row.status);
+            }
         }
     }
 }

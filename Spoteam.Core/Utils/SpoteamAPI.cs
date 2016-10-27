@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 namespace Spoteam.Core.Utils {
     class SpoteamAPI{
         HttpClient client;
+        private const string server = "http://13.70.86.190:8128/";
 
         public SpoteamAPI() {
             client = new HttpClient();
@@ -17,7 +18,7 @@ namespace Spoteam.Core.Utils {
         }
 
         public async Task<SelectResult> RefreshDataAsync() {
-            var uri = new Uri("http://13.70.86.190:8128/get/user/status?value=available");
+            var uri = new Uri(server + "get/user/status?value=available");
             var response = await client.GetAsync(uri);
             if (response.IsSuccessStatusCode) {
                 var content = await response.Content.ReadAsStringAsync();
