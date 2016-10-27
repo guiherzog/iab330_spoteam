@@ -49,15 +49,14 @@ namespace Spoteam.Core.ViewModels
         public override void Start()
         {
             base.Start();
-            UserName = selectedUser.UserName;
-            UserLocation = selectedUser.UserLocation;
-            UserIcon = selectedUser.UserIcon;
+            UserName = selectedUser.name;
+            UserLocation = selectedUser.location.ToString();
+            UserIcon = selectedUser.image;
             GetUsers();
         }
 
         public async void GetUsers() {
-            SelectResult result = await spoteamAPI.RefreshDataAsync();
-            Debug.WriteLine("Result.status = " + result.status);
+            GetUserResult result = await spoteamAPI.Get("user", "status", "available");
             foreach (var row in result.rows) {
                 Debug.WriteLine("User " + row.name + " - Email: " + row.email + " - Image: " + row.image + " - Location: " + row.location + " - Status: " + row.status);
             }

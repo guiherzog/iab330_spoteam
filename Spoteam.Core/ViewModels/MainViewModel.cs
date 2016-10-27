@@ -47,10 +47,10 @@ namespace Spoteam.Core.ViewModels
         {
             UserList = new ObservableCollection<User>()
             {
-                new User("Iris","S515","xui"),
-                new User("Everlyn","S516","gue"),
-                new User("Lucus","S514","lus"),
-                new User("Will","S510","wil"),
+                new User("iris@gmail.com", "Iris", "", 3, "offline"),
+                new User("everlyn@gmail.com", "Everlyn", "", 6, "busy"),
+                new User("lucas@gmail.com", "Lucas", "", 4, "available"),
+                new User("guilherme@gmail.com", "Will", "", 10, "available"),
             };
             UserSearchList = UserList;
             SelectUserCommand = new MvxCommand<User>(selectedLocation => ShowViewModel<SecondViewModel>(selectedLocation));
@@ -77,8 +77,8 @@ namespace Spoteam.Core.ViewModels
         {
             
 
-            UserList.Add(new User("Iris", "S515", "xui"));
-            UserList.Add(new User("Iris", "S515", "xui"));
+            UserList.Add(new User("iris@gmail.com", "Iris", "", 3, "offline"));
+            UserList.Add(new User("iris@gmail.com", "Iris", "", 3, "offline"));
 
 
             UserSearchList = UserList;
