@@ -1,8 +1,11 @@
 ﻿using MvvmCross.Core.ViewModels;
+using Spoteam.Core.Model;
 using Spoteam.Core.Models;
+using Spoteam.Core.Utils;
 //using MvvmCrossDemo.Core.Services;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +17,9 @@ namespace Spoteam.Core.ViewModels
         private User selectedUser;
 
         private string selectedusername;
+
+        private SpoteamAPI spoteamAPI = new SpoteamAPI();
+        
 
         public string UserName
         {
@@ -39,7 +45,6 @@ namespace Spoteam.Core.ViewModels
         public void Init(User parameters)
         {
             selectedUser = parameters;
-
         }
         public override void Start()
         {
@@ -47,17 +52,15 @@ namespace Spoteam.Core.ViewModels
             UserName = selectedUser.UserName;
             UserLocation = selectedUser.UserLocation;
             UserIcon = selectedUser.UserIcon;
-            //GetForecast();
+            GetUsers();
         }
 
-        //public async void GetForecast()
-        //{
-        //    var weatherService = new WeatherService();
-        //    var weatherResult = await weatherService.GetForecast(selectedLocation.Key);
-        //    var min = weatherResult.DailyForecasts.FirstOrDefault().Temperature.Minimum.Value;
-        //    var max = weatherResult.DailyForecasts.FirstOrDefault().Temperature.Maximum.Value;
-        //    MinimumTemperature = string.Format("{0} degrees Minimum", min);
-        //    MaximumTemperature = string.Format("{0} degrees Maximum", max);
-        //}
+        public async void GetUsers() {
+            SelectResult result = await spoteamAPI.RefreshDataAsync();
+            Debug.WriteLine("Result.status = " + result.status);
+            //foreach (var item in items) {
+            //    Debug.WriteLine(item.ToString());
+            //}
+        }
     }
 }
