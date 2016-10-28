@@ -11,7 +11,8 @@
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="match_parent"
+        android:layout_weight="9"
         android:id="@+id/linearLayout3"
         android:background="#fff">
         <ImageView
@@ -82,12 +83,13 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout2"
-        android:layout_gravity="bottom"
-        android:layout_weight="1"
-        android:minHeight="50dp"
-        android:elevation="5dp">
+        android:layout_height="50dp"
+        android:id="@+id/navBar"
+        android:layout_gravity="end"
+        android:elevation="5dp"
+        android:showDividers="none"
+        android:baselineAligned="false"
+        android:layout_weight="0.5">
         <Button
             android:text="@string/navLeftButtonText"
             android:layout_weight="1"

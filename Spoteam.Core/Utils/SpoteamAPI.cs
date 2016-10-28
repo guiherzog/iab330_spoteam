@@ -3,6 +3,7 @@ using Spoteam.Core.Model;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Spoteam.Core.Models;
 
 namespace Spoteam.Core.Utils
 {
@@ -15,6 +16,21 @@ namespace Spoteam.Core.Utils
 		{
 			client = new HttpClient();
 			client.MaxResponseContentBufferSize = 256000;
+		}
+
+		public async Task<MessageResult> SetUser(User user)
+		{
+			string URL = String.Format("{0}/create/user?name={1}&email={2}&teamId={3}&status={4}", server, user.name, user.email, user.teamId, user.status);
+			var uri = new Uri(URL);
+			var response = await client.GetAsync(uri);
+			if (response.IsSuccessStatusCode)
+			{
+				string content = await response.Content.ReadAsStringAsync();
+				return JsonConvert.DeserializeObject<MessageResult>(content);
+			}
+			else {
+				return null;
+			}
 		}
 
 		public async Task<Object> Get(string table, string column, string value)

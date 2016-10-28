@@ -47,9 +47,6 @@ namespace Spoteam_App
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView = global::Spoteam_App.Resource.Styleable.MvxListView;
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate = global::Spoteam_App.Resource.Styleable.MvxListView_MvxDropDownItemTemplate;
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxItemTemplate = global::Spoteam_App.Resource.Styleable.MvxListView_MvxItemTemplate;
-			global::Poz1.NFCForms.Droid.Resource.String.ApplicationName = global::Spoteam_App.Resource.String.ApplicationName;
-			global::Poz1.NFCForms.Droid.Resource.String.Hello = global::Spoteam_App.Resource.String.Hello;
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::Spoteam_App.Resource.Attribute.actionBarSize;
 		}
 		
 		public partial class Animation
@@ -2296,11 +2293,11 @@ namespace Spoteam_App
 			// aapt resource value: 0x7f0b000c
 			public const int MvxBindingTagUnique = 2131427340;
 			
-			// aapt resource value: 0x7f0b00b8
-			public const int acceptButton = 2131427512;
+			// aapt resource value: 0x7f0b00ba
+			public const int acceptButton = 2131427514;
 			
-			// aapt resource value: 0x7f0b00a0
-			public const int action0 = 2131427488;
+			// aapt resource value: 0x7f0b00a1
+			public const int action0 = 2131427489;
 			
 			// aapt resource value: 0x7f0b005c
 			public const int action_bar = 2131427420;
@@ -2326,8 +2323,8 @@ namespace Spoteam_App
 			// aapt resource value: 0x7f0b005d
 			public const int action_context_bar = 2131427421;
 			
-			// aapt resource value: 0x7f0b00a4
-			public const int action_divider = 2131427492;
+			// aapt resource value: 0x7f0b00a5
+			public const int action_divider = 2131427493;
 			
 			// aapt resource value: 0x7f0b0003
 			public const int action_menu_divider = 2131427331;
@@ -2359,8 +2356,8 @@ namespace Spoteam_App
 			// aapt resource value: 0x7f0b0015
 			public const int bottom = 2131427349;
 			
-			// aapt resource value: 0x7f0b00b7
-			public const int btn_back = 2131427511;
+			// aapt resource value: 0x7f0b00b9
+			public const int btn_back = 2131427513;
 			
 			// aapt resource value: 0x7f0b0080
 			public const int btn_group = 2131427456;
@@ -2374,14 +2371,14 @@ namespace Spoteam_App
 			// aapt resource value: 0x7f0b006f
 			public const int btn_tryagain = 2131427439;
 			
-			// aapt resource value: 0x7f0b00bb
-			public const int button2 = 2131427515;
+			// aapt resource value: 0x7f0b00bd
+			public const int button2 = 2131427517;
 			
 			// aapt resource value: 0x7f0b0046
 			public const int buttonPanel = 2131427398;
 			
-			// aapt resource value: 0x7f0b00a1
-			public const int cancel_action = 2131427489;
+			// aapt resource value: 0x7f0b00a2
+			public const int cancel_action = 2131427490;
 			
 			// aapt resource value: 0x7f0b0016
 			public const int center = 2131427350;
@@ -2395,8 +2392,8 @@ namespace Spoteam_App
 			// aapt resource value: 0x7f0b0054
 			public const int checkbox = 2131427412;
 			
-			// aapt resource value: 0x7f0b00a7
-			public const int chronometer = 2131427495;
+			// aapt resource value: 0x7f0b00a8
+			public const int chronometer = 2131427496;
 			
 			// aapt resource value: 0x7f0b001f
 			public const int clip_horizontal = 2131427359;
@@ -2422,8 +2419,8 @@ namespace Spoteam_App
 			// aapt resource value: 0x7f0b0042
 			public const int default_activity_button = 2131427394;
 			
-			// aapt resource value: 0x7f0b00b9
-			public const int denyButton = 2131427513;
+			// aapt resource value: 0x7f0b00bb
+			public const int denyButton = 2131427515;
 			
 			// aapt resource value: 0x7f0b0071
 			public const int design_bottom_sheet = 2131427441;
@@ -2449,8 +2446,8 @@ namespace Spoteam_App
 			// aapt resource value: 0x7f0b0019
 			public const int end = 2131427353;
 			
-			// aapt resource value: 0x7f0b00ac
-			public const int end_padder = 2131427500;
+			// aapt resource value: 0x7f0b00ad
+			public const int end_padder = 2131427501;
 			
 			// aapt resource value: 0x7f0b000d
 			public const int enterAlways = 2131427341;
@@ -2497,26 +2494,26 @@ namespace Spoteam_App
 			// aapt resource value: 0x7f0b006b
 			public const int imageView1 = 2131427435;
 			
-			// aapt resource value: 0x7f0b00b6
-			public const int imageView2 = 2131427510;
+			// aapt resource value: 0x7f0b00b8
+			public const int imageView2 = 2131427512;
 			
-			// aapt resource value: 0x7f0b00ab
-			public const int info = 2131427499;
+			// aapt resource value: 0x7f0b00ac
+			public const int info = 2131427500;
 			
 			// aapt resource value: 0x7f0b000a
 			public const int item_touch_helper_previous_elevation = 2131427338;
 			
-			// aapt resource value: 0x7f0b0086
-			public const int joinButton = 2131427462;
+			// aapt resource value: 0x7f0b0087
+			public const int joinButton = 2131427463;
 			
 			// aapt resource value: 0x7f0b001b
 			public const int left = 2131427355;
 			
-			// aapt resource value: 0x7f0b00a5
-			public const int line1 = 2131427493;
+			// aapt resource value: 0x7f0b00a6
+			public const int line1 = 2131427494;
 			
-			// aapt resource value: 0x7f0b00a9
-			public const int line3 = 2131427497;
+			// aapt resource value: 0x7f0b00aa
+			public const int line3 = 2131427498;
 			
 			// aapt resource value: 0x7f0b0083
 			public const int linearLayout1 = 2131427459;
@@ -2524,8 +2521,8 @@ namespace Spoteam_App
 			// aapt resource value: 0x7f0b007f
 			public const int linearLayout2 = 2131427455;
 			
-			// aapt resource value: 0x7f0b00ad
-			public const int linearLayout3 = 2131427501;
+			// aapt resource value: 0x7f0b00ae
+			public const int linearLayout3 = 2131427502;
 			
 			// aapt resource value: 0x7f0b0027
 			public const int listMode = 2131427367;
@@ -2533,8 +2530,8 @@ namespace Spoteam_App
 			// aapt resource value: 0x7f0b0043
 			public const int list_item = 2131427395;
 			
-			// aapt resource value: 0x7f0b00a3
-			public const int media_actions = 2131427491;
+			// aapt resource value: 0x7f0b00a4
+			public const int media_actions = 2131427492;
 			
 			// aapt resource value: 0x7f0b0036
 			public const int middle = 2131427382;
@@ -2542,92 +2539,92 @@ namespace Spoteam_App
 			// aapt resource value: 0x7f0b0023
 			public const int mini = 2131427363;
 			
-			// aapt resource value: 0x7f0b0092
-			public const int mr_art = 2131427474;
-			
-			// aapt resource value: 0x7f0b0087
-			public const int mr_chooser_list = 2131427463;
-			
-			// aapt resource value: 0x7f0b008a
-			public const int mr_chooser_route_desc = 2131427466;
+			// aapt resource value: 0x7f0b0093
+			public const int mr_art = 2131427475;
 			
 			// aapt resource value: 0x7f0b0088
-			public const int mr_chooser_route_icon = 2131427464;
-			
-			// aapt resource value: 0x7f0b0089
-			public const int mr_chooser_route_name = 2131427465;
-			
-			// aapt resource value: 0x7f0b008f
-			public const int mr_close = 2131427471;
-			
-			// aapt resource value: 0x7f0b0095
-			public const int mr_control_divider = 2131427477;
-			
-			// aapt resource value: 0x7f0b009b
-			public const int mr_control_play_pause = 2131427483;
-			
-			// aapt resource value: 0x7f0b009e
-			public const int mr_control_subtitle = 2131427486;
-			
-			// aapt resource value: 0x7f0b009d
-			public const int mr_control_title = 2131427485;
-			
-			// aapt resource value: 0x7f0b009c
-			public const int mr_control_title_container = 2131427484;
-			
-			// aapt resource value: 0x7f0b0090
-			public const int mr_custom_control = 2131427472;
-			
-			// aapt resource value: 0x7f0b0091
-			public const int mr_default_control = 2131427473;
-			
-			// aapt resource value: 0x7f0b008c
-			public const int mr_dialog_area = 2131427468;
+			public const int mr_chooser_list = 2131427464;
 			
 			// aapt resource value: 0x7f0b008b
-			public const int mr_expandable_area = 2131427467;
+			public const int mr_chooser_route_desc = 2131427467;
 			
-			// aapt resource value: 0x7f0b009f
-			public const int mr_group_expand_collapse = 2131427487;
+			// aapt resource value: 0x7f0b0089
+			public const int mr_chooser_route_icon = 2131427465;
 			
-			// aapt resource value: 0x7f0b0093
-			public const int mr_media_main_control = 2131427475;
+			// aapt resource value: 0x7f0b008a
+			public const int mr_chooser_route_name = 2131427466;
 			
-			// aapt resource value: 0x7f0b008e
-			public const int mr_name = 2131427470;
-			
-			// aapt resource value: 0x7f0b0094
-			public const int mr_playback_control = 2131427476;
-			
-			// aapt resource value: 0x7f0b008d
-			public const int mr_title_bar = 2131427469;
+			// aapt resource value: 0x7f0b0090
+			public const int mr_close = 2131427472;
 			
 			// aapt resource value: 0x7f0b0096
-			public const int mr_volume_control = 2131427478;
+			public const int mr_control_divider = 2131427478;
+			
+			// aapt resource value: 0x7f0b009c
+			public const int mr_control_play_pause = 2131427484;
+			
+			// aapt resource value: 0x7f0b009f
+			public const int mr_control_subtitle = 2131427487;
+			
+			// aapt resource value: 0x7f0b009e
+			public const int mr_control_title = 2131427486;
+			
+			// aapt resource value: 0x7f0b009d
+			public const int mr_control_title_container = 2131427485;
+			
+			// aapt resource value: 0x7f0b0091
+			public const int mr_custom_control = 2131427473;
+			
+			// aapt resource value: 0x7f0b0092
+			public const int mr_default_control = 2131427474;
+			
+			// aapt resource value: 0x7f0b008d
+			public const int mr_dialog_area = 2131427469;
+			
+			// aapt resource value: 0x7f0b008c
+			public const int mr_expandable_area = 2131427468;
+			
+			// aapt resource value: 0x7f0b00a0
+			public const int mr_group_expand_collapse = 2131427488;
+			
+			// aapt resource value: 0x7f0b0094
+			public const int mr_media_main_control = 2131427476;
+			
+			// aapt resource value: 0x7f0b008f
+			public const int mr_name = 2131427471;
+			
+			// aapt resource value: 0x7f0b0095
+			public const int mr_playback_control = 2131427477;
+			
+			// aapt resource value: 0x7f0b008e
+			public const int mr_title_bar = 2131427470;
 			
 			// aapt resource value: 0x7f0b0097
-			public const int mr_volume_group_list = 2131427479;
+			public const int mr_volume_control = 2131427479;
 			
-			// aapt resource value: 0x7f0b0099
-			public const int mr_volume_item_icon = 2131427481;
+			// aapt resource value: 0x7f0b0098
+			public const int mr_volume_group_list = 2131427480;
 			
 			// aapt resource value: 0x7f0b009a
-			public const int mr_volume_slider = 2131427482;
+			public const int mr_volume_item_icon = 2131427482;
+			
+			// aapt resource value: 0x7f0b009b
+			public const int mr_volume_slider = 2131427483;
 			
 			// aapt resource value: 0x7f0b0030
 			public const int multiply = 2131427376;
 			
-			// aapt resource value: 0x7f0b00c0
-			public const int navBar = 2131427520;
-			
-			// aapt resource value: 0x7f0b00b3
-			public const int navButtonLeft = 2131427507;
-			
 			// aapt resource value: 0x7f0b00b4
-			public const int navButtonMiddle = 2131427508;
+			public const int navBar = 2131427508;
 			
 			// aapt resource value: 0x7f0b00b5
-			public const int navButtonRight = 2131427509;
+			public const int navButtonLeft = 2131427509;
+			
+			// aapt resource value: 0x7f0b00b6
+			public const int navButtonMiddle = 2131427510;
+			
+			// aapt resource value: 0x7f0b00b7
+			public const int navButtonRight = 2131427511;
 			
 			// aapt resource value: 0x7f0b0074
 			public const int navigation_header_container = 2131427444;
@@ -2659,20 +2656,20 @@ namespace Spoteam_App
 			// aapt resource value: 0x7f0b0056
 			public const int radio = 2131427414;
 			
-			// aapt resource value: 0x7f0b00af
-			public const int radioButton1 = 2131427503;
-			
 			// aapt resource value: 0x7f0b00b0
-			public const int radioButton2 = 2131427504;
+			public const int radioButton1 = 2131427504;
 			
 			// aapt resource value: 0x7f0b00b1
-			public const int radioButton3 = 2131427505;
+			public const int radioButton2 = 2131427505;
 			
 			// aapt resource value: 0x7f0b00b2
-			public const int radioButton4 = 2131427506;
+			public const int radioButton3 = 2131427506;
 			
-			// aapt resource value: 0x7f0b00ae
-			public const int radioGroup1 = 2131427502;
+			// aapt resource value: 0x7f0b00b3
+			public const int radioButton4 = 2131427507;
+			
+			// aapt resource value: 0x7f0b00af
+			public const int radioGroup1 = 2131427503;
 			
 			// aapt resource value: 0x7f0b001c
 			public const int right = 2131427356;
@@ -2767,8 +2764,8 @@ namespace Spoteam_App
 			// aapt resource value: 0x7f0b001d
 			public const int start = 2131427357;
 			
-			// aapt resource value: 0x7f0b00a2
-			public const int status_bar_latest_event_content = 2131427490;
+			// aapt resource value: 0x7f0b00a3
+			public const int status_bar_latest_event_content = 2131427491;
 			
 			// aapt resource value: 0x7f0b0067
 			public const int submit_area = 2131427431;
@@ -2791,14 +2788,14 @@ namespace Spoteam_App
 			// aapt resource value: 0x7f0b007e
 			public const int tableRow4 = 2131427454;
 			
-			// aapt resource value: 0x7f0b0085
-			public const int teamCode = 2131427461;
+			// aapt resource value: 0x7f0b0086
+			public const int teamCode = 2131427462;
 			
-			// aapt resource value: 0x7f0b00aa
-			public const int text = 2131427498;
+			// aapt resource value: 0x7f0b00ab
+			public const int text = 2131427499;
 			
-			// aapt resource value: 0x7f0b00a8
-			public const int text2 = 2131427496;
+			// aapt resource value: 0x7f0b00a9
+			public const int text2 = 2131427497;
 			
 			// aapt resource value: 0x7f0b004f
 			public const int textSpacerNoButtons = 2131427407;
@@ -2812,8 +2809,8 @@ namespace Spoteam_App
 			// aapt resource value: 0x7f0b006e
 			public const int textView3 = 2131427438;
 			
-			// aapt resource value: 0x7f0b00a6
-			public const int time = 2131427494;
+			// aapt resource value: 0x7f0b00a7
+			public const int time = 2131427495;
 			
 			// aapt resource value: 0x7f0b0045
 			public const int title = 2131427397;
@@ -2821,8 +2818,8 @@ namespace Spoteam_App
 			// aapt resource value: 0x7f0b004a
 			public const int title_template = 2131427402;
 			
-			// aapt resource value: 0x7f0b00ba
-			public const int tnameText = 2131427514;
+			// aapt resource value: 0x7f0b00bc
+			public const int tnameText = 2131427516;
 			
 			// aapt resource value: 0x7f0b001e
 			public const int top = 2131427358;
@@ -2836,32 +2833,35 @@ namespace Spoteam_App
 			// aapt resource value: 0x7f0b0009
 			public const int up = 2131427337;
 			
-			// aapt resource value: 0x7f0b00bf
-			public const int updateButton = 2131427519;
+			// aapt resource value: 0x7f0b00c1
+			public const int updateButton = 2131427521;
 			
-			// aapt resource value: 0x7f0b00bd
-			public const int updateText = 2131427517;
+			// aapt resource value: 0x7f0b00bf
+			public const int updateText = 2131427519;
 			
 			// aapt resource value: 0x7f0b002e
 			public const int useLogo = 2131427374;
 			
-			// aapt resource value: 0x7f0b0084
-			public const int userEmail = 2131427460;
+			// aapt resource value: 0x7f0b0085
+			public const int userEmail = 2131427461;
 			
-			// aapt resource value: 0x7f0b00be
-			public const int userLocation = 2131427518;
+			// aapt resource value: 0x7f0b00c0
+			public const int userLocation = 2131427520;
+			
+			// aapt resource value: 0x7f0b0084
+			public const int userName = 2131427460;
 			
 			// aapt resource value: 0x7f0b007b
 			public const int username_text = 2131427451;
 			
-			// aapt resource value: 0x7f0b00bc
-			public const int usersListView = 2131427516;
+			// aapt resource value: 0x7f0b00be
+			public const int usersListView = 2131427518;
 			
 			// aapt resource value: 0x7f0b0000
 			public const int view_offset_helper = 2131427328;
 			
-			// aapt resource value: 0x7f0b0098
-			public const int volume_item_container = 2131427480;
+			// aapt resource value: 0x7f0b0099
+			public const int volume_item_container = 2131427481;
 			
 			// aapt resource value: 0x7f0b003b
 			public const int withText = 2131427387;
@@ -3155,11 +3155,8 @@ namespace Spoteam_App
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f060027
-			public const int ApplicationName = 2131099687;
-			
 			// aapt resource value: 0x7f060026
-			public const int Hello = 2131099686;
+			public const int ApplicationName = 2131099686;
 			
 			// aapt resource value: 0x7f060012
 			public const int abc_action_bar_home_description = 2131099666;
@@ -3272,14 +3269,14 @@ namespace Spoteam_App
 			// aapt resource value: 0x7f06000e
 			public const int mr_user_route_category_name = 2131099662;
 			
+			// aapt resource value: 0x7f060027
+			public const int navLeftButtonText = 2131099687;
+			
 			// aapt resource value: 0x7f060028
-			public const int navLeftButtonText = 2131099688;
+			public const int navMiddleButtonText = 2131099688;
 			
 			// aapt resource value: 0x7f060029
-			public const int navMiddleButtonText = 2131099689;
-			
-			// aapt resource value: 0x7f06002a
-			public const int navRightButtonText = 2131099690;
+			public const int navRightButtonText = 2131099689;
 			
 			// aapt resource value: 0x7f060025
 			public const int status_bar_notification_info_overflow = 2131099685;
