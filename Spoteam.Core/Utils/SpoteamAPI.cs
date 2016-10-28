@@ -17,7 +17,7 @@ namespace Spoteam.Core.Utils
 			client.MaxResponseContentBufferSize = 256000;
 		}
 
-		public async Task<GetUserResult> Get(string table, string column, string value)
+		public async Task<Object> Get(string table, string column, string value)
 		{
 			string URL = String.Format("{0}/get/{1}/{2}?value={3}", server, table, column, value);
 			var uri = new Uri(URL);
@@ -25,19 +25,45 @@ namespace Spoteam.Core.Utils
 			if (response.IsSuccessStatusCode)
 			{
 				string content = await response.Content.ReadAsStringAsync();
-				switch (table)
-				{
-					case "user":
-						return JsonConvert.DeserializeObject<GetUserResult>(content);
-					case "location":
-					case "team":
-					default:
-						return null;
-				}
-			}
+                switch (table) {
+                    case "user":
+                        return JsonConvert.DeserializeObject<GetUserResult>(content);
+                    case "team":
+                        return JsonConvert.DeserializeObject<GetTeamResult>(content);
+                    case "request":
+                        return JsonConvert.DeserializeObject<GetRequestResult>(content);
+                    case "location":
+                        return JsonConvert.DeserializeObject<GetLocationResult>(content);
+                    default:
+                        return null;
+                }
+            }
 			else {
 				return null;
 			}
 		}
-	}
+
+        public async Task<Object> Get(string table) {
+            string URL = String.Format("{0}/get/{1}", server, table);
+            var uri = new Uri(URL);
+            var response = await client.GetAsync(uri);
+            if (response.IsSuccessStatusCode) {
+                string content = await response.Content.ReadAsStringAsync();
+                switch (table) {
+                    case "user":
+                        return JsonConvert.DeserializeObject<GetUserResult>(content);
+                    case "team":
+                        return JsonConvert.DeserializeObject<GetTeamResult>(content);
+                    case "request":
+                        return JsonConvert.DeserializeObject<GetRequestResult>(content);
+                    case "location":
+                        return JsonConvert.DeserializeObject<GetLocationResult>(content);
+                    default:
+                        return null;
+                }
+            } else {
+                return null;
+            }
+        }
+    }
 }

@@ -11,16 +11,18 @@ namespace Spoteam.Core.Models
     {
         public string email { get; set; }
         public string name { get; set; }
-        public string image { get; set; }
-        public int location { get; set; }
+        public string img { get; set; }
+        public int? locationId { get; set; }
+        public int teamId { get; set; }
         public string status { get; set; }
 
         public User() { }
-        public User(string email, string name, string image, int location, string status) {
+        public User(string email, string name, string img, int? locationId, int teamId, string status) {
             this.email = email;
             this.name = name;
-            this.image = image;
-            this.location = location;
+            this.img = img;
+            this.locationId = locationId;
+            this.teamId = teamId;
             this.status = status;
         }
     }

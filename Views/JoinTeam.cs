@@ -20,7 +20,8 @@ namespace Spoteam_App.Views
 			NfcManager NfcManager = (NfcManager)Android.App.Application.Context.GetSystemService(Context.NfcService);
 			NFCdevice = NfcManager.DefaultAdapter;
 
-			Log.Info("NFC Adapter",NFCdevice.ToString());
+            if(NFCdevice != null)
+			    Log.Info("NFC Adapter",NFCdevice.ToString());
 
 			SetContentView(Resource.Layout.Join);
         }
