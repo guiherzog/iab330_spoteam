@@ -32,6 +32,8 @@ namespace Spoteam.Core.Utils
                         return JsonConvert.DeserializeObject<GetTeamResult>(content);
                     case "request":
                         return JsonConvert.DeserializeObject<GetRequestResult>(content);
+                    case "location":
+                        return JsonConvert.DeserializeObject<GetLocationResult>(content);
                     default:
                         return null;
                 }
@@ -54,6 +56,8 @@ namespace Spoteam.Core.Utils
                         return JsonConvert.DeserializeObject<GetTeamResult>(content);
                     case "request":
                         return JsonConvert.DeserializeObject<GetRequestResult>(content);
+                    case "location":
+                        return JsonConvert.DeserializeObject<GetLocationResult>(content);
                     default:
                         return null;
                 }

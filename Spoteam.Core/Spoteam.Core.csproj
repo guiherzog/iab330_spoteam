@@ -35,8 +35,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Model\GetLocationResult.cs" />
     <Compile Include="Model\GetRequestResult.cs" />
     <Compile Include="Model\GetTeamResult.cs" />
+    <Compile Include="Model\Location.cs" />
     <Compile Include="Model\MessageResult.cs" />
     <Compile Include="Model\GetUserResult.cs" />
     <Compile Include="Model\Request.cs" />

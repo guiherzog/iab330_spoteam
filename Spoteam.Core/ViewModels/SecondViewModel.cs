@@ -65,6 +65,10 @@ namespace Spoteam.Core.ViewModels
             foreach (var row in requestResult.rows) {
                 Debug.WriteLine("User " + row.requesterUser + " requested user " + row.requestedUser + ". Status: " + row.status);
             }
+            GetLocationResult locationResult = (GetLocationResult) await spoteamAPI.Get("location");
+            foreach (var row in locationResult.rows) {
+                Debug.WriteLine("Location " + row.name + " - Id: " + row.id + " - NFC: " + row.nfc);
+            }
         }
 	}
 }
