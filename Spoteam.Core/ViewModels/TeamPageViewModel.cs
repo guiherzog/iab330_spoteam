@@ -26,13 +26,12 @@ namespace Spoteam.Core.ViewModels
 
 		public TeamPageViewModel()
 		{
-
 			UserList = new ObservableCollection<User>()
 			{
-				new User("Iris","S515","xui"),
-				new User("Everlyn","S516","gue"),
-				new User(teamCode,"S514","lus"),
-				new User("Will","S510","wil"),
+				new User("iris@gmail.com", "Iris", "xui", 3, "offline"),
+				new User("everlyn@gmail.com", "Everlyn", "fb", 6, "busy"),
+				new User("lucas@gmail.com", "Lucas", "lus", 4, "available"),
+				new User("guilherme@gmail.com", "Will", "wil", 10, "available"),
 			};
 			UserSearchList = UserList;
 			SelectUserCommand = new MvxCommand<User>(selectedLocation => ShowViewModel<SecondViewModel>(selectedLocation));

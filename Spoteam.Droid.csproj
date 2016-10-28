@@ -80,6 +80,12 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
+    <Reference Include="Poz1.NFCForms.Abstract">
+      <HintPath>packages\NFCForms.2.3.0\lib\MonoAndroid10\Poz1.NFCForms.Abstract.dll</HintPath>
+    </Reference>
+    <Reference Include="Poz1.NFCForms.Droid">
+      <HintPath>packages\NFCForms.2.3.0\lib\MonoAndroid10\Poz1.NFCForms.Droid.dll</HintPath>
+    </Reference>
     <Reference Include="NdefLibrary">
       <HintPath>packages\NdefLibrary.3.0.2\lib\portable-net45+win8+wp8+wpa81\NdefLibrary.dll</HintPath>
     </Reference>
@@ -100,12 +106,6 @@
     </Reference>
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>packages\Xamarin.Forms.1.4.2.6359\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll</HintPath>
-    </Reference>
-    <Reference Include="Poz1.NFCForms.Abstract">
-      <HintPath>packages\NFCForms.2.3.0\lib\MonoAndroid10\Poz1.NFCForms.Abstract.dll</HintPath>
-    </Reference>
-    <Reference Include="Poz1.NFCForms.Droid">
-      <HintPath>packages\NFCForms.2.3.0\lib\MonoAndroid10\Poz1.NFCForms.Droid.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
