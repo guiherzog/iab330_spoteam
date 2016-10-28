@@ -37,8 +37,14 @@
     <Compile Include="App.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\TeamPageViewModel.cs" />
     <Compile Include="ViewModels\SecondViewModel.cs" />
+    <Compile Include="ViewModels\ProfilePageViewModel.cs" />
+    <Compile Include="ViewModels\GroupPageViewModel.cs" />
+    <Compile Include="ViewModels\LocationAcceptedViewModel.cs" />
+    <Compile Include="ViewModels\LocationDeniedViewModel.cs" />
+    <Compile Include="ViewModels\JoinTeamViewModel.cs" />
+    <Compile Include="ViewModels\LocationRequestViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

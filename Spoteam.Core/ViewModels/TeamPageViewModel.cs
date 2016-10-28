@@ -1,0 +1,98 @@
+using MvvmCross.Core.ViewModels;
+using System.Collections.ObjectModel;
+using System.Windows.Input;
+using Spoteam.Core.Models;
+using System.Diagnostics;
+
+namespace Spoteam.Core.ViewModels
+{
+    public class TeamPageViewModel : MvxViewModel
+    {
+        private ObservableCollection<User> userlocations;
+
+		string teamCode = "";
+
+		public void Init(string _teamCode)
+		{
+			teamCode = _teamCode;
+			Debug.WriteLine(teamCode);
+
+		}
+		public override void Start()
+		{
+			base.Start();
+
+		}
+
+		public TeamPageViewModel()
+		{
+
+			UserList = new ObservableCollection<User>()
+			{
+				new User("Iris","S515","xui"),
+				new User("Everlyn","S516","gue"),
+				new User(teamCode,"S514","lus"),
+				new User("Will","S510","wil"),
+			};
+			UserSearchList = UserList;
+			SelectUserCommand = new MvxCommand<User>(selectedLocation => ShowViewModel<SecondViewModel>(selectedLocation));
+
+		}
+
+        public ObservableCollection<User> UserSearchList
+        {
+            get { return userlocations; }
+            set { SetProperty(ref userlocations, value); }
+
+        }
+
+
+        public ObservableCollection<User> UserList
+        {
+            get { return userlocations; }
+            set { SetProperty(ref userlocations, value); }
+
+        }
+
+        public ICommand SelectUserCommand { get; private set; }
+
+
+		// Changes to the Location page when clicked on Request location button.
+        public ICommand UserLocationCommand
+        {
+            get
+            {
+                return new MvxCommand(() => ShowViewModel<LocationRequestViewModel>());
+            }
+        }
+
+		// Changes to GroupPage when clicked on Teams button.
+        public ICommand GroupPageCommand
+        {
+            get
+            {
+                return new MvxCommand(() => ShowViewModel<GroupPageViewModel>());
+            }
+        }
+
+		// Changes to TeamPage when clicked on My Team button.
+        public ICommand TeamPageCommand
+        {
+            get
+            {
+                return new MvxCommand(() => ShowViewModel<TeamPageViewModel>());
+            }
+        }
+
+		// Changes to ProfilePage when clicked on Settings button.
+        public ICommand ProfilePageCommand
+        {
+            get
+            {
+                return new MvxCommand(() => ShowViewModel<ProfilePageViewModel>());
+            }
+        }
+    }
+
+
+}

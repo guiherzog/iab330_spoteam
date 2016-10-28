@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="spoteam.spoteamApp" android:versionCode="1" android:versionName="1.0" android:installLocation="auto">
-	<uses-sdk android:minSdkVersion="16" />
-	<application android:label="Spoteam_App" android:icon="@drawable/icon"></application>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="spoteam.app" android:versionCode="1" android:installLocation="auto" android:versionName="0.1">
+	<uses-sdk android:minSdkVersion="19" />
+	<application android:label="Spoteam" android:icon="@drawable/icon"></application>
+	<uses-permission android:name="android.permission.NFC" />
+	<uses-permission android:name="android.permission.VIBRATE" />
+	<uses-feature android:name="android.hardware.nfc" />
 </manifest>

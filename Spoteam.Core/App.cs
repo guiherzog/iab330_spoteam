@@ -11,7 +11,7 @@ namespace Spoteam.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-            RegisterAppStart<ViewModels.TeamPageViewModel>();
+            RegisterAppStart<JoinTeamViewModel>();
         }
     }
 }

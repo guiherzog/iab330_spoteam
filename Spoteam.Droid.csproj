@@ -16,7 +16,7 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -80,15 +80,40 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
+    <Reference Include="NdefLibrary">
+      <HintPath>packages\NdefLibrary.3.0.2\lib\portable-net45+win8+wp8+wpa81\NdefLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v4">
+      <HintPath>packages\Xamarin.Android.Support.v4.21.0.3.0\lib\MonoAndroid10\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="FormsViewGroup">
+      <HintPath>packages\Xamarin.Forms.1.4.2.6359\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>packages\Xamarin.Forms.1.4.2.6359\lib\MonoAndroid10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.Android">
+      <HintPath>packages\Xamarin.Forms.1.4.2.6359\lib\MonoAndroid10\Xamarin.Forms.Platform.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>packages\Xamarin.Forms.1.4.2.6359\lib\MonoAndroid10\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>packages\Xamarin.Forms.1.4.2.6359\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Poz1.NFCForms.Abstract">
+      <HintPath>packages\NFCForms.2.3.0\lib\MonoAndroid10\Poz1.NFCForms.Abstract.dll</HintPath>
+    </Reference>
+    <Reference Include="Poz1.NFCForms.Droid">
+      <HintPath>packages\NFCForms.2.3.0\lib\MonoAndroid10\Poz1.NFCForms.Droid.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DebugTrace.cs" />
-    <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="SplashScreen.cs" />
-    <Compile Include="Views\JoinPage.cs" />
+    <Compile Include="Views\JoinTeam.cs" />
     <Compile Include="Views\LocationDeny.cs" />
     <Compile Include="Views\LocationAccept.cs" />
     <Compile Include="Views\LocationRequest.cs" />
@@ -96,9 +121,11 @@
     <Compile Include="Views\ProfilePage.cs" />
     <Compile Include="Views\SecondView.cs" />
     <Compile Include="Views\TeamPage.cs" />
+    <Compile Include="Views\FirstView.cs" />
+    <Compile Include="LinkerPleaseInclude.cs" />
+    <Compile Include="DebugTrace.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="GettingStarted.Xamarin" />
     <AndroidResource Include="Resources\layout\LocationRequest.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
@@ -125,6 +152,8 @@
     <AndroidResource Include="Resources\layout\Join.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\drawable\fab_add.png" />
+    <AndroidResource Include="Resources\layout\FirstView.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\TeamPage.axml">
@@ -181,4 +210,5 @@
 		<Target Name="AfterBuild">
 		</Target>
  -->
+  <Import Project="packages\Xamarin.Forms.1.4.2.6359\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('packages\Xamarin.Forms.1.4.2.6359\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
 </Project>

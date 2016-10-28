@@ -47,17 +47,7 @@ namespace Spoteam.Core.ViewModels
             UserName = selectedUser.UserName;
             UserLocation = selectedUser.UserLocation;
             UserIcon = selectedUser.UserIcon;
-            //GetForecast();
+       
         }
-
-        //public async void GetForecast()
-        //{
-        //    var weatherService = new WeatherService();
-        //    var weatherResult = await weatherService.GetForecast(selectedLocation.Key);
-        //    var min = weatherResult.DailyForecasts.FirstOrDefault().Temperature.Minimum.Value;
-        //    var max = weatherResult.DailyForecasts.FirstOrDefault().Temperature.Maximum.Value;
-        //    MinimumTemperature = string.Format("{0} degrees Minimum", min);
-        //    MaximumTemperature = string.Format("{0} degrees Maximum", max);
-        //}
     }
 }
