@@ -28,10 +28,10 @@ namespace Spoteam.Core.ViewModels
 		{
 			UserList = new ObservableCollection<User>()
 			{
-				new User("iris@gmail.com", "Iris", "xui", 3, "offline"),
-				new User("everlyn@gmail.com", "Everlyn", "fb", 6, "busy"),
-				new User("lucas@gmail.com", "Lucas", "lus", 4, "available"),
-				new User("guilherme@gmail.com", "Will", "wil", 10, "available"),
+				new User("iris@gmail.com", "Iris", "", 3, 1234, "offline"),
+				new User("everlyn@gmail.com", "Everlyn", "", 6, 1234, "busy"),
+				new User("lucas@gmail.com", "Lucas", "", 4, 1234, "available"),
+				new User("guilherme@gmail.com", "Will", "", 10, 1234, "request"),
 			};
 			UserSearchList = UserList;
 			SelectUserCommand = new MvxCommand<User>(selectedLocation => ShowViewModel<SecondViewModel>(selectedLocation));

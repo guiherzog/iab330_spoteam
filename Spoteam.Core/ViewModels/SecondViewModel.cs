@@ -45,17 +45,17 @@ namespace Spoteam.Core.ViewModels
 		{
 			base.Start();
 			UserName = selectedUser.name;
-			UserLocation = selectedUser.location.ToString();
-			UserIcon = selectedUser.image;
+			UserLocation = selectedUser.locationId.ToString();
+			UserIcon = selectedUser.img;
 			GetUsers();
 		}
 
 		public async void GetUsers()
 		{
-			GetUserResult result = await spoteamAPI.Get("user", "status", "available");
+			GetUserResult result = (GetUserResult) await spoteamAPI.Get("user");
 			foreach (var row in result.rows)
 			{
-				Debug.WriteLine("User " + row.name + " - Email: " + row.email + " - Image: " + row.image + " - Location: " + row.location + " - Status: " + row.status);
+				Debug.WriteLine("User " + row.name + " - Email: " + row.email + " - Image: " + row.img + " - Location: " + row.locationId + " - Team: " + row.teamId + " - Status: " + row.status);
 			}
 		}
 	}

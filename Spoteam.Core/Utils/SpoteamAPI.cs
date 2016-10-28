@@ -17,7 +17,7 @@ namespace Spoteam.Core.Utils
 			client.MaxResponseContentBufferSize = 256000;
 		}
 
-		public async Task<GetUserResult> Get(string table, string column, string value)
+		public async Task<Object> Get(string table, string column, string value)
 		{
 			string URL = String.Format("{0}/get/{1}/{2}?value={3}", server, table, column, value);
 			var uri = new Uri(URL);
