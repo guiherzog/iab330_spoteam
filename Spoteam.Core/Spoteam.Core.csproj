@@ -35,8 +35,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Model\GetRequestResult.cs" />
+    <Compile Include="Model\GetTeamResult.cs" />
     <Compile Include="Model\MessageResult.cs" />
     <Compile Include="Model\GetUserResult.cs" />
+    <Compile Include="Model\Request.cs" />
+    <Compile Include="Model\Team.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\TeamPageViewModel.cs" />

@@ -57,6 +57,14 @@ namespace Spoteam.Core.ViewModels
 			{
 				Debug.WriteLine("User " + row.name + " - Email: " + row.email + " - Image: " + row.img + " - Location: " + row.locationId + " - Team: " + row.teamId + " - Status: " + row.status);
 			}
-		}
+            GetTeamResult teamResult = (GetTeamResult) await spoteamAPI.Get("team");
+            foreach (var row in teamResult.rows) {
+                Debug.WriteLine("Team " + row.name + " - Id: " + row.id + " - Img: " + row.img);
+            }
+            GetRequestResult requestResult = (GetRequestResult) await spoteamAPI.Get("request");
+            foreach (var row in requestResult.rows) {
+                Debug.WriteLine("User " + row.requesterUser + " requested user " + row.requestedUser + ". Status: " + row.status);
+            }
+        }
 	}
 }

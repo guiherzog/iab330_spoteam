@@ -25,16 +25,17 @@ namespace Spoteam.Core.Utils
 			if (response.IsSuccessStatusCode)
 			{
 				string content = await response.Content.ReadAsStringAsync();
-				switch (table)
-				{
-					case "user":
-						return JsonConvert.DeserializeObject<GetUserResult>(content);
-					case "location":
-					case "team":
-					default:
-						return null;
-				}
-			}
+                switch (table) {
+                    case "user":
+                        return JsonConvert.DeserializeObject<GetUserResult>(content);
+                    case "team":
+                        return JsonConvert.DeserializeObject<GetTeamResult>(content);
+                    case "request":
+                        return JsonConvert.DeserializeObject<GetRequestResult>(content);
+                    default:
+                        return null;
+                }
+            }
 			else {
 				return null;
 			}
@@ -49,8 +50,10 @@ namespace Spoteam.Core.Utils
                 switch (table) {
                     case "user":
                         return JsonConvert.DeserializeObject<GetUserResult>(content);
-                    case "location":
                     case "team":
+                        return JsonConvert.DeserializeObject<GetTeamResult>(content);
+                    case "request":
+                        return JsonConvert.DeserializeObject<GetRequestResult>(content);
                     default:
                         return null;
                 }
