@@ -39,5 +39,24 @@ namespace Spoteam.Core.Utils
 				return null;
 			}
 		}
-	}
+
+        public async Task<Object> Get(string table) {
+            string URL = String.Format("{0}/get/{1}", server, table);
+            var uri = new Uri(URL);
+            var response = await client.GetAsync(uri);
+            if (response.IsSuccessStatusCode) {
+                string content = await response.Content.ReadAsStringAsync();
+                switch (table) {
+                    case "user":
+                        return JsonConvert.DeserializeObject<GetUserResult>(content);
+                    case "location":
+                    case "team":
+                    default:
+                        return null;
+                }
+            } else {
+                return null;
+            }
+        }
+    }
 }
