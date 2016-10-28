@@ -28,12 +28,12 @@
           android:gravity="left"
           android:layout_column="1" />
       <TextView
-          android:minWidth="50px"
-          android:minHeight="50px"
+          
+          android:textSize="15dp"
           local:MvxBind="Text status"
           android:layout_margin="10dp"
           android:gravity="left"
-          android:layout_weight="20"
+          
           android:layout_column="2" />
       <TextView
           android:textSize="20dp"
