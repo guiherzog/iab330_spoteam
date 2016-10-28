@@ -106,7 +106,7 @@
         android:layout_weight="1"
         android:minHeight="50dp">
         <Button
-            android:text="Teams"
+            android:text="My Requests"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -124,7 +124,7 @@
             android:background="#595f6d"
             android:textColor="#efefef" />
         <Button
-            android:text="Settings"
+            android:text="Update"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

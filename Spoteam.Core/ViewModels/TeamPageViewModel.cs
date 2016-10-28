@@ -30,6 +30,13 @@ namespace Spoteam.Core.ViewModels
 			{
 				new User("iris@gmail.com", "Iris", "xui", 3, "offline"),
 				new User("everlyn@gmail.com", "Everlyn", "fb", 6, "busy"),
+				new User("everlyn@gmail.com", "Everlyn", "fb", 6, "busy"),
+				new User("everlyn@gmail.com", "Everlyn", "fb", 6, "busy"),
+				new User("everlyn@gmail.com", "Everlyn", "fb", 6, "busy"),
+				new User("everlyn@gmail.com", "Everlyn", "fb", 6, "busy"),
+				new User("everlyn@gmail.com", "Everlyn", "fb", 6, "busy"),
+				new User("everlyn@gmail.com", "Everlyn", "fb", 6, "busy"),
+				new User("everlyn@gmail.com", "Everlyn", "fb", 6, "busy"),
 				new User("lucas@gmail.com", "Lucas", "lus", 4, "available"),
 				new User("guilherme@gmail.com", "Will", "wil", 10, "available"),
 			};
@@ -56,21 +63,11 @@ namespace Spoteam.Core.ViewModels
         public ICommand SelectUserCommand { get; private set; }
 
 
-		// Changes to the Location page when clicked on Request location button.
-        public ICommand UserLocationCommand
+        public ICommand RequestsPageCommand
         {
             get
             {
-                return new MvxCommand(() => ShowViewModel<LocationRequestViewModel>());
-            }
-        }
-
-		// Changes to GroupPage when clicked on Teams button.
-        public ICommand GroupPageCommand
-        {
-            get
-            {
-                return new MvxCommand(() => ShowViewModel<GroupPageViewModel>());
+                return new MvxCommand(() => ShowViewModel<RequestsViewModel>());
             }
         }
 
@@ -91,6 +88,15 @@ namespace Spoteam.Core.ViewModels
                 return new MvxCommand(() => ShowViewModel<ProfilePageViewModel>());
             }
         }
+
+		// Changes to ProfilePage when clicked on Settings button.
+		public ICommand UpdatePageCommand
+		{
+			get
+			{
+				return new MvxCommand(() => ShowViewModel<UpdateViewModel>());
+			}
+		}
     }
 
 

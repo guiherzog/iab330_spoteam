@@ -13,12 +13,13 @@
         android:layout_width="match_parent"
         android:layout_height="500dp"
         android:id="@+id/linearLayout3"
-        android:background="#333">
+        android:background="#fff">
         <ImageView
             android:src="@drawable/xui"
             android:layout_width="match_parent"
             android:layout_height="260.5dp"
-            android:id="@+id/imageView1" />
+            android:id="@+id/imageView1"
+            android:padding="20dp" />
         <TextView
             android:text="Xui"
             android:textAppearance="?android:attr/textAppearanceLarge"
@@ -28,7 +29,17 @@
             android:layout_gravity="center"
             android:textAlignment="center"
             android:gravity="center"
-            android:padding="10dp" />
+            android:padding="10dp"
+            android:textColor="#000"
+            android:textSize="24sp" />
+        <TextView
+            android:text="Change Status"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:textColor="#ff212121"
+            android:gravity="center" />
         <RadioGroup
             android:minWidth="25px"
             android:minHeight="25px"
@@ -39,7 +50,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
-                android:text="Automatic Request Location"
+                android:text="Send location automatically"
                 android:id="@+id/radioButton1"
                 android:textColor="#000"
                 android:layout_gravity="center_horizontal" />
@@ -47,14 +58,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
-                android:text="Ask For Location"
+                android:text="Request Only"
                 android:id="@+id/radioButton2"
                 android:textColor="#000"
                 android:layout_gravity="center_horizontal" />
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Do Not Disturb"
+                android:text="Busy"
                 android:id="@+id/radioButton3"
                 android:textColor="#000"
                 android:layout_gravity="center_horizontal" />
@@ -64,7 +75,8 @@
                 android:text="Offline"
                 android:id="@+id/radioButton4"
                 android:textColor="#000"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"
+                android:drawableTint="#ffd50000" />
         </RadioGroup>
     </LinearLayout>
     <LinearLayout
@@ -74,34 +86,38 @@
         android:id="@+id/linearLayout2"
         android:layout_gravity="bottom"
         android:layout_weight="1"
-        android:minHeight="50dp">
+        android:minHeight="50dp"
+        android:elevation="5dp">
         <Button
-            android:text="Group"
+            android:text="@string/navLeftButtonText"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/btn_group"
-            local:MvxBind="Click GroupPageCommand"
-            android:background="#595f6d"
-            android:textColor="#efefef" />
-        <Button
-            android:text="Individual"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/btn_individual"
-            local:MvxBind="Click TeamPageCommand"
-            android:background="#595f6d"
-            android:textColor="#efefef" />
-        <Button
-            android:text="Profile"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/btn_profile"
-            local:MvxBind="Click ProfilePageCommand"
+            android:id="@+id/navButtonLeft"
+            local:MvxBind="Click RequestsPageCommand"
             android:background="#595f6d"
             android:textColor="#efefef"
-            android:layout_marginRight="0.0dp" />
+            android:textAllCaps="false" />
+        <Button
+            android:text="@string/navMiddleButtonText"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/navButtonMiddle"
+            local:MvxBind="Click TeamPageCommand"
+            android:background="#595f6d"
+            android:textColor="#efefef"
+            android:textAllCaps="false" />
+        <Button
+            android:text="@string/navRightButtonText"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/navButtonRight"
+            local:MvxBind="Click UpdatePageCommand"
+            android:background="#595f6d"
+            android:textColor="#efefef"
+            android:layout_marginRight="0.0dp"
+            android:textAllCaps="false" />
     </LinearLayout>
 </LinearLayout>

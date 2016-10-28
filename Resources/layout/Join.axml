@@ -7,6 +7,13 @@
     android:background="#343740"
     android:id="@+id/linearLayout1"
     android:gravity="center">
+    <ImageView
+        android:src="@drawable/icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView1"
+        android:layout_weight="1"
+        android:padding="50dp" />
     <TextView
         android:text="Create a New Account"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -51,5 +58,8 @@
         android:id="@+id/joinButton"
         local:MvxBind="Click JoinTeamCommand"
         android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp" />
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="50dp"
+        android:phoneNumber="false"
+        android:password="false" />
 </LinearLayout>

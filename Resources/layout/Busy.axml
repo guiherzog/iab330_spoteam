@@ -18,14 +18,14 @@
         android:textAlignment="center"
         android:gravity="center" />
     <TextView
-        android:text="IS Currently"
+        android:text="is Currently"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView2"
         android:gravity="center" />
     <TextView
-        android:text="BUSY"
+        android:text="Busy"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/textView3"
         android:layout_width="match_parent"

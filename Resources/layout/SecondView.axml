@@ -4,35 +4,36 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-  <TextView
-      android:textSize="50dp"
-      android:textAppearance="?android:attr/textAppearanceLarge"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:id="@+id/textView1"
-      android:layout_gravity="center"
-      android:textAlignment="center"
-      android:gravity="center"
-        local:MvxBind="Text UserName" />
-  <ImageView
-      android:layout_width="match_parent"
-      android:layout_height="260.5dp"
-      local:MvxBind="DrawableName UserIcon"
-      android:layout_column="0" />
-  <TextView
-    android:text="IS Currently Located AT"
-    android:textAppearance="?android:attr/textAppearanceMedium"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/textView2"
-    android:gravity="center" />
-  <TextView
-     
-      android:textAppearance="?android:attr/textAppearanceLarge"
-      android:textSize="100dp"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:gravity="center"
-      local:MvxBind="Text UserLocation" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="260.5dp"
+        local:MvxBind="DrawableName UserIcon"
+        android:layout_column="0"
+        android:padding="20dp" />
+    <TextView
+        android:textSize="50dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tnameText"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:gravity="center"
+        local:MvxBind="Text UserName"
+        android:hint="User Name" />
+    <TextView
+        android:text="is currently located at"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:gravity="center" />
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        local:MvxBind="Text UserLocation"
+        android:hint="Room" />
 </LinearLayout>
-

@@ -47,7 +47,8 @@
     <Compile Include="ViewModels\LocationAcceptedViewModel.cs" />
     <Compile Include="ViewModels\LocationDeniedViewModel.cs" />
     <Compile Include="ViewModels\JoinTeamViewModel.cs" />
-    <Compile Include="ViewModels\LocationRequestViewModel.cs" />
+    <Compile Include="ViewModels\RequestsViewModel.cs" />
+    <Compile Include="ViewModels\UpdateViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

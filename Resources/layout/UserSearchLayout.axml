@@ -3,44 +3,57 @@
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-  <TableLayout
+    android:layout_height="match_parent"
+    android:showDividers="none">
+    <TableLayout
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tableLayout1"
         android:layout_marginBottom="0.0dp"
-        android:stretchColumns="2">
-    <TableRow
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-      <ImageView
-          android:layout_width="150px"
-          android:layout_height="150px"
-          local:MvxBind="DrawableName image"
-          android:layout_column="0"
-          android:layout_marginRight="10.0dp" />
-      <TextView
-          android:textSize="30dp"
-          android:layout_width="200dp"
-          local:MvxBind="Text name"
-          android:gravity="left"
-          android:layout_column="1" />
-      <TextView
-          
-          android:textSize="15dp"
-          local:MvxBind="Text status"
-          android:layout_margin="10dp"
-          android:gravity="left"
-          
-          android:layout_column="2" />
-      <TextView
-          android:textSize="20dp"
-          android:gravity="center"
-          local:MvxBind="Text location"
-          android:layout_column="3"
-          android:layout_marginRight="10.0dp" />
-    </TableRow>
-  </TableLayout>
+        android:stretchColumns="2"
+        android:layout_weight="1"
+        android:showDividers="none">
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#595f6d"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:elevation="2dp"
+            android:showDividers="none"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:padding="5dp">
+            <ImageView
+                android:layout_width="150px"
+                android:layout_height="150px"
+                local:MvxBind="DrawableName image"
+                android:layout_column="0"
+                android:layout_marginRight="10.0dp"
+                android:padding="5dp" />
+            <TextView
+                android:textSize="20sp"
+                local:MvxBind="Text name"
+                android:gravity="left"
+                android:textColor="#fffafafa"
+                android:layout_column="1"
+                android:layout_weight="3"
+                android:layout_width="200dp" />
+            <TextView
+                android:textSize="16sp"
+                local:MvxBind="Text status"
+                android:layout_margin="10dp"
+                android:gravity="left"
+                android:textColor="#fffafafa" />
+            <TextView
+                android:textSize="12sp"
+                android:gravity="center"
+                local:MvxBind="Text location"
+                android:textColor="#fff"
+                android:hint="Location"
+                android:layout_weight="1" />
+        </TableRow>
+    </TableLayout>
 </LinearLayout>

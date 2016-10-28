@@ -137,19 +137,16 @@
     <Compile Include="Views\JoinTeam.cs" />
     <Compile Include="Views\LocationDeny.cs" />
     <Compile Include="Views\LocationAccept.cs" />
-    <Compile Include="Views\LocationRequest.cs" />
     <Compile Include="Views\GroupPage.cs" />
     <Compile Include="Views\ProfilePage.cs" />
     <Compile Include="Views\SecondView.cs" />
     <Compile Include="Views\TeamPage.cs" />
-    <Compile Include="Views\FirstView.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="DebugTrace.cs" />
+    <Compile Include="Views\RequestsView.cs" />
+    <Compile Include="Views\Update.cs" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\LocationRequest.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
@@ -174,7 +171,10 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\fab_add.png" />
-    <AndroidResource Include="Resources\layout\FirstView.axml" />
+    <AndroidResource Include="Resources\layout\Requests.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Update.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\TeamPage.axml">

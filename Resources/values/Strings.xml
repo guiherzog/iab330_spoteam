@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="ApplicationName">Spoteam App</string>
+	<string name="navLeftButtonText">My Requests</string>
+	<string name="navMiddleButtonText">My Team</string>
+	<string name="navRightButtonText">Update</string>
 </resources>
