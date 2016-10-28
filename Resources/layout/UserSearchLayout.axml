@@ -16,14 +16,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
       <ImageView
-          android:layout_width="200px"
-          android:layout_height="200px"
+          android:layout_width="150px"
+          android:layout_height="150px"
           local:MvxBind="DrawableName image"
           android:layout_column="0"
           android:layout_marginRight="10.0dp" />
       <TextView
           android:textSize="30dp"
-          android:layout_width="100dp"
+          android:layout_width="200dp"
           local:MvxBind="Text name"
           android:gravity="left"
           android:layout_column="1" />
@@ -31,7 +31,9 @@
           android:minWidth="50px"
           android:minHeight="50px"
           local:MvxBind="Text status"
-          android:gravity="center"
+          android:layout_margin="10dp"
+          android:gravity="left"
+          android:layout_weight="20"
           android:layout_column="2" />
       <TextView
           android:textSize="20dp"
