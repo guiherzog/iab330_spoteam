@@ -15,20 +15,22 @@ namespace Spoteam.Core.ViewModels
         SpoteamAPI api = new SpoteamAPI();
         List<User> users = new List<User>();
         User user = new User();
+        private string _name = "";
+        private string _img = "";
 
         public void Init() {
-            user.email = Settings.UserEmail;
+            UserName = Settings.UserName;
             user.teamId = Settings.TeamId;
             listUsers(user);
         }
         public void Init(User user) {
+            UserName = user.name;
             this.user = user;
             listUsers(user);
         }
         public override void Start()
 		{
 			base.Start();
-
         }
 
         public async void listUsers(User user) {
@@ -45,6 +47,26 @@ namespace Spoteam.Core.ViewModels
 			SelectUserCommand = new MvxCommand<User>(selectedLocation => ShowViewModel<SecondViewModel>(selectedLocation));
 
 		}
+
+        public string UserName {
+            get { return _name; }
+            set {
+                if (value != null && value != _name) {
+                    _name = value;
+                    RaisePropertyChanged(() => UserName);
+                }
+            }
+        }
+
+        public string UserImg {
+            get { return _img; }
+            set {
+                if (value != null && value != _img) {
+                    _img = value;
+                    RaisePropertyChanged(() => UserImg);
+                }
+            }
+        }
 
         public ObservableCollection<User> UserSearchList
         {

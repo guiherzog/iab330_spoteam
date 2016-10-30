@@ -40,6 +40,7 @@ namespace Spoteam.Core
 
             if (result.status == "success") {
                 ShowViewModel<TeamPageViewModel>(user);
+                Settings.UserName = user.name;
                 Settings.UserEmail = user.email;
                 Settings.TeamId = user.teamId;
             }

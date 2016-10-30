@@ -25,9 +25,8 @@
                 android:layout_width="50dp"
                 android:layout_marginRight="10.0dp" />
             <TextView
-                android:text="Xui"
+                local:MvxBind="Text UserName"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:id="@+id/username_text"
                 android:gravity="left"
                 android:layout_column="1"
                 android:layout_width="183.5dp" />

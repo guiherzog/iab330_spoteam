@@ -24,6 +24,9 @@ namespace Spoteam.Core.Helpers
     private const string UserEmailKey = "user_email_key";
     private static readonly string UserEmailDefault = string.Empty;
 
+    private const string UserNameKey = "user_name_key";
+    private static readonly string UserNameDefault = string.Empty;
+
     private const string TeamIdKey = "team_id_key";
     private static readonly int TeamIdDefault = 0;
 
@@ -39,6 +42,18 @@ namespace Spoteam.Core.Helpers
       set
       {
         AppSettings.AddOrUpdateValue<string>(UserEmailKey, value);
+      }
+    }
+
+    public static string UserName
+    {
+      get
+      {
+        return AppSettings.GetValueOrDefault<string>(UserNameKey, UserNameDefault);
+      }
+      set
+      {
+        AppSettings.AddOrUpdateValue<string>(UserNameKey, value);
       }
     }
 
