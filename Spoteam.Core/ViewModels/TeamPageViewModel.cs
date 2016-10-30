@@ -2,10 +2,10 @@ using MvvmCross.Core.ViewModels;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Spoteam.Core.Models;
-using System.Diagnostics;
 using System.Collections.Generic;
 using Spoteam.Core.Model;
 using Spoteam.Core.Utils;
+using Spoteam.Core.Helpers;
 
 namespace Spoteam.Core.ViewModels
 {
@@ -14,8 +14,15 @@ namespace Spoteam.Core.ViewModels
         private ObservableCollection<User> userlocations;
         SpoteamAPI api = new SpoteamAPI();
         List<User> users = new List<User>();
+        User user = new User();
 
+        public void Init() {
+            user.email = Settings.UserEmail;
+            user.teamId = Settings.TeamId;
+            listUsers(user);
+        }
         public void Init(User user) {
+            this.user = user;
             listUsers(user);
         }
         public override void Start()

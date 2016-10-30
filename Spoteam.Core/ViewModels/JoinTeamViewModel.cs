@@ -6,6 +6,7 @@ using Spoteam.Core.Model;
 using Spoteam.Core.Models;
 using Spoteam.Core.Utils;
 using Spoteam.Core.ViewModels;
+using Spoteam.Core.Helpers;
 
 namespace Spoteam.Core
 {
@@ -37,8 +38,11 @@ namespace Spoteam.Core
 
 			Debug.WriteLine(result.message);
 
-            if (result.status == "success")
-			    ShowViewModel<TeamPageViewModel>(user);
+            if (result.status == "success") {
+                ShowViewModel<TeamPageViewModel>(user);
+                Settings.UserEmail = user.email;
+                Settings.TeamId = user.teamId;
+            }
             else
                 Debug.WriteLine("Error: Check your account and team id.");
 

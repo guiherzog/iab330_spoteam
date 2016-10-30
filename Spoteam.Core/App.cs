@@ -1,4 +1,6 @@
 using MvvmCross.Platform.IoC;
+using Spoteam.Core.Helpers;
+using Spoteam.Core.ViewModels;
 
 namespace Spoteam.Core
 {
@@ -11,7 +13,10 @@ namespace Spoteam.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-            RegisterAppStart<JoinTeamViewModel>();
+            if (Settings.UserEmail != string.Empty && Settings.TeamId != 0)
+                RegisterAppStart<TeamPageViewModel>();
+            else
+                RegisterAppStart<JoinTeamViewModel>();
         }
     }
 }
