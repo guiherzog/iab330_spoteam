@@ -37,9 +37,12 @@ namespace Spoteam.Core
 
 			Debug.WriteLine(result.message);
 
-			ShowViewModel<TeamPageViewModel>();
+            if (result.status == "success")
+			    ShowViewModel<TeamPageViewModel>(user);
+            else
+                Debug.WriteLine("Error: Check your account and team id.");
 
-		}
+        }
 
 		public string TeamCode
 		{

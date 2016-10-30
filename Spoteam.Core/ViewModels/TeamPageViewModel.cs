@@ -3,37 +3,38 @@ using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Spoteam.Core.Models;
 using System.Diagnostics;
+using System.Collections.Generic;
+using Spoteam.Core.Model;
+using Spoteam.Core.Utils;
 
 namespace Spoteam.Core.ViewModels
 {
     public class TeamPageViewModel : MvxViewModel
     {
         private ObservableCollection<User> userlocations;
+        SpoteamAPI api = new SpoteamAPI();
+        List<User> users = new List<User>();
 
-		string teamCode = "";
-
-		public void Init(string _teamCode)
-		{
-			teamCode = _teamCode;
-			Debug.WriteLine(teamCode);
-
-		}
-		public override void Start()
+        public void Init(User user) {
+            listUsers(user);
+        }
+        public override void Start()
 		{
 			base.Start();
 
-		}
+        }
+
+        public async void listUsers(User user) {
+            GetUserResult result = (GetUserResult) await api.Get("user", "teamId", user.teamId.ToString());
+            if (result.status == "success") {
+                users = result.rows;
+                UserList = new ObservableCollection<User>(users);
+                UserSearchList = UserList;
+            }
+        }
 
 		public TeamPageViewModel()
 		{
-			UserList = new ObservableCollection<User>()
-			{
-				new User("iris@gmail.com", "Iris", "", 3, 1234, "offline"),
-				new User("everlyn@gmail.com", "Everlyn", "", 6, 1234, "busy"),
-				new User("lucas@gmail.com", "Lucas", "", 4, 1234, "available"),
-				new User("guilherme@gmail.com", "Will", "", 10, 1234, "request"),
-			};
-			UserSearchList = UserList;
 			SelectUserCommand = new MvxCommand<User>(selectedLocation => ShowViewModel<SecondViewModel>(selectedLocation));
 
 		}
@@ -41,16 +42,20 @@ namespace Spoteam.Core.ViewModels
         public ObservableCollection<User> UserSearchList
         {
             get { return userlocations; }
-            set { SetProperty(ref userlocations, value); }
-
+            set {
+                userlocations = value;
+                RaisePropertyChanged(() => UserSearchList);
+            }
         }
 
 
         public ObservableCollection<User> UserList
         {
             get { return userlocations; }
-            set { SetProperty(ref userlocations, value); }
-
+            set {
+                userlocations = value;
+                RaisePropertyChanged(() => UserList);
+            }
         }
 
         public ICommand SelectUserCommand { get; private set; }
