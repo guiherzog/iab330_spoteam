@@ -7,7 +7,7 @@ using System.Diagnostics;
 
 namespace Spoteam.Core.ViewModels
 {
-	public class SecondViewModel : MvxViewModel
+	public class LocationDetailsViewModel : MvxViewModel
 	{
 		private User selectedUser;
 

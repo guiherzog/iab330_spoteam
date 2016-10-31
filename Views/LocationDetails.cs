@@ -13,13 +13,13 @@ using MvvmCross.Droid.Views;
 
 namespace Spoteam_App.Views
 {
-    [Activity(Label = "SpoTeam")]
-    public class SecondView : MvxActivity
+    [Activity(Label = "Location Details")]
+    public class LocationDetails : MvxActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.SecondView);
+            SetContentView(Resource.Layout.LocationDetails);
         }
     }
 }

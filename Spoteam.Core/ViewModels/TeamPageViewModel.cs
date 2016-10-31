@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using Spoteam.Core.Model;
 using Spoteam.Core.Utils;
 using Spoteam.Core.Helpers;
+using System.Diagnostics;
 
 namespace Spoteam.Core.ViewModels
 {
@@ -41,11 +42,6 @@ namespace Spoteam.Core.ViewModels
                 UserSearchList = UserList;
             }
         }
-
-		public TeamPageViewModel()
-		{
-			SelectUserCommand = new MvxCommand<User>(selectedLocation => ShowViewModel<SecondViewModel>(selectedLocation));
-		}
 
         public string UserName {
             get { return _name; }
@@ -86,8 +82,29 @@ namespace Spoteam.Core.ViewModels
             }
         }
 
-        public ICommand SelectUserCommand { get; private set; }
+        public ICommand SelectUserCommand {
+            get {
+                return new MvxCommand<User>(selectedUser => locateUser(selectedUser));
+            }
+        }
 
+        public void locateUser(User user) {
+            Debug.WriteLine(user.status);
+            switch (user.status) {
+                case "offline":
+                case "busy":
+                    //Toast: This user is currently user.status. Try again later.
+                    break;
+                case "request":
+                    //Toast: Requesting user location.
+                    break;
+                case "available":
+                    //Toast: User is currently at (SpoteamAPI.get("location", user.locationId).rows[0].name).
+                    break;
+                default:
+                    break;
+            }
+        }
 
         public ICommand RequestsPageCommand
         {
