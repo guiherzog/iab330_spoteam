@@ -49,6 +49,7 @@
         android:id="@+id/textView2"
         android:gravity="center"
         android:textColor="#ffd05353"
+        local:MvxBind="Visibility Visibility(BoolInViewModel); Text LoginMessage"
         android:visibility="invisible" />
     <TextView
         android:text="Join a Team"
