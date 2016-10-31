@@ -52,7 +52,7 @@ namespace Spoteam.Core.Utils
 
         public async Task<Object> Get(string table, string column, string value)
 		{
-			string URL = String.Format("{0}/get/{1}/{2}?value={3}", server, table, column, value);
+			string URL = String.Format("{0}/get/{1}?{2}={3}", server, table, column, value);
 			var uri = new Uri(URL);
 			var response = await client.GetAsync(uri);
 			if (response.IsSuccessStatusCode)
