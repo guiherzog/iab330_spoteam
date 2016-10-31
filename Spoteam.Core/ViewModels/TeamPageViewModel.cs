@@ -35,7 +35,7 @@ namespace Spoteam.Core.ViewModels
 
         public async void listUsers(User user) {
             GetUserResult result = (GetUserResult) await api.Get("user", "teamId", user.teamId.ToString());
-            if (result.status == "success") {
+            if (result != null && result.status == "success") {
                 users = result.rows;
                 UserList = new ObservableCollection<User>(users);
                 UserSearchList = UserList;
