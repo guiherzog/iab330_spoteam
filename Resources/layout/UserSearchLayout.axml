@@ -29,7 +29,7 @@
             <ImageView
                 android:layout_width="150px"
                 android:layout_height="150px"
-                local:MvxBind="DrawableName image"
+                local:MvxBind="DrawableName img"
                 android:layout_column="0"
                 android:layout_marginRight="10.0dp"
                 android:padding="5dp" />
@@ -47,13 +47,6 @@
                 android:layout_margin="10dp"
                 android:gravity="left"
                 android:textColor="#fffafafa" />
-            <TextView
-                android:textSize="12sp"
-                android:gravity="center"
-                local:MvxBind="Text location"
-                android:textColor="#fff"
-                android:hint="Location"
-                android:layout_weight="1" />
         </TableRow>
     </TableLayout>
 </LinearLayout>

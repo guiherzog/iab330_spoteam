@@ -76,6 +76,18 @@ namespace Spoteam.Core.Utils
 			}
 		}
 
+        public async Task<GetRequestResult> GetWaitingRequests(User user) {
+            string URL = String.Format("{0}/get/{1}?{2}={3}&{4}={5}", server, "request", "requestedUser", user.email, "status", "waiting");
+            var uri = new Uri(URL);
+            var response = await client.GetAsync(uri);
+            if (response.IsSuccessStatusCode) {
+                string content = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<GetRequestResult>(content);
+            } else {
+                return null;
+            }
+        }
+
         public async Task<Object> Get(string table) {
             string URL = String.Format("{0}/get/{1}", server, table);
             var uri = new Uri(URL);
