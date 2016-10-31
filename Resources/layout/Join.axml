@@ -42,6 +42,15 @@
         android:hint="Email"
         local:MvxBind="Text UserEmail" />
     <TextView
+        android:text="@string/loginInvalid"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:gravity="center"
+        android:textColor="#ffd05353"
+        android:visibility="invisible" />
+    <TextView
         android:text="Join a Team"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"

@@ -3224,6 +3224,9 @@ namespace Spoteam_App
 			// aapt resource value: 0x7f060011
 			public const int character_counter_pattern = 2131099665;
 			
+			// aapt resource value: 0x7f06002a
+			public const int loginInvalid = 2131099690;
+			
 			// aapt resource value: 0x7f060000
 			public const int mr_button_content_description = 2131099648;
 			
