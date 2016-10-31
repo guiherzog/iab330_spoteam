@@ -18,7 +18,7 @@ namespace Spoteam.Core.Utils
 			client.MaxResponseContentBufferSize = 256000;
 		}
 
-		public async Task<MessageResult> SetUser(User user)
+		public async Task<MessageResult> CreateUser(User user)
 		{
 			string URL = String.Format("{0}/create/user?name={1}&email={2}&teamId={3}&status={4}", server, user.name, user.email, user.teamId, user.status);
 			var uri = new Uri(URL);
@@ -33,9 +33,26 @@ namespace Spoteam.Core.Utils
 			}
 		}
 
-		public async Task<Object> Get(string table, string column, string value)
+        public async Task<MessageResult> UpdateUserLocation(string userEmail, string newLocation) {
+            GetLocationResult result = (GetLocationResult) await Get("location", "name", newLocation);
+            if (result != null && result.status == "success" && result.rows.Count > 0) {
+                string URL = String.Format("{0}/set/user/email?value={1}&locationId={2}", server, userEmail, result.rows[0].id);
+                var uri = new Uri(URL);
+                var response = await client.GetAsync(uri);
+                if (response.IsSuccessStatusCode) {
+                    string content = await response.Content.ReadAsStringAsync();
+                    return JsonConvert.DeserializeObject<MessageResult>(content);
+                } else {
+                    return null;
+                }
+            } else {
+                return null;
+            }
+        }
+
+        public async Task<Object> Get(string table, string column, string value)
 		{
-			string URL = String.Format("{0}/get/{1}/{2}?value={3}", server, table, column, value);
+			string URL = String.Format("{0}/get/{1}?{2}={3}", server, table, column, value);
 			var uri = new Uri(URL);
 			var response = await client.GetAsync(uri);
 			if (response.IsSuccessStatusCode)

@@ -34,11 +34,11 @@ namespace Spoteam.Core
 
 			User user = new User(UserEmail, UserName, "", null, Int32.Parse(TeamCode), "available");
 
-			MessageResult result = await spoteamAPI.SetUser(user);
+			MessageResult result = await spoteamAPI.CreateUser(user);
 
 			Debug.WriteLine(result.message);
 
-            if (result.status == "success") {
+            if (result != null && result.status == "success") {
                 ShowViewModel<TeamPageViewModel>(user);
                 Settings.UserName = user.name;
                 Settings.UserEmail = user.email;
