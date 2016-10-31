@@ -88,7 +88,7 @@ namespace Spoteam.Core.ViewModels
             }
         }
 
-        public void locateUser(User user) {
+        public async void locateUser(User user) {
             Debug.WriteLine(user.status);
             switch (user.status) {
                 case "offline":
@@ -96,7 +96,18 @@ namespace Spoteam.Core.ViewModels
                     //Toast: This user is currently user.status. Try again later.
                     break;
                 case "request":
-                    //Toast: Requesting user location.
+                    Request request = new Request(Settings.UserEmail, user.email, null, "waiting");
+                    MessageResult result = await api.CreateRequest(request);
+                    if (result == null) {
+                        Debug.WriteLine("result == null");
+                    } else {
+                        Debug.WriteLine(result.status + " - Message: " + result.message);
+                    }
+                    if (result != null && result.status == "success") {
+                        //Toast: Requesting user location.
+                    } else {
+                        //Toast: Error requesting user location.
+                    }
                     break;
                 case "available":
                     //Toast: User is currently at (SpoteamAPI.get("location", user.locationId).rows[0].name).

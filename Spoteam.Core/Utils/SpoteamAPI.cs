@@ -4,6 +4,7 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Spoteam.Core.Models;
+using System.Diagnostics;
 
 namespace Spoteam.Core.Utils
 {
@@ -32,6 +33,19 @@ namespace Spoteam.Core.Utils
 				return null;
 			}
 		}
+
+        public async Task<MessageResult> CreateRequest(Request request) {
+            string URL = String.Format("{0}/create/request?requesterUser={1}&requestedUser={2}&status={3}", server, request.requesterUser, request.requestedUser, request.status);
+            Debug.WriteLine(URL);
+            var uri = new Uri(URL);
+            var response = await client.GetAsync(uri);
+            if (response.IsSuccessStatusCode) {
+                string content = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<MessageResult>(content);
+            } else {
+                return null;
+            }
+        }
 
         public async Task<MessageResult> UpdateUserLocation(string userEmail, string newLocation) {
             GetLocationResult result = (GetLocationResult) await Get("location", "name", newLocation);
