@@ -45,7 +45,6 @@ namespace Spoteam.Core.ViewModels
 		public TeamPageViewModel()
 		{
 			SelectUserCommand = new MvxCommand<User>(selectedLocation => ShowViewModel<SecondViewModel>(selectedLocation));
-
 		}
 
         public string UserName {

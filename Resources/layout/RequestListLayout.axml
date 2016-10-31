@@ -44,34 +44,6 @@
                 android:phoneNumber="false"
                 android:password="false"
                 android:textSize="16dp" />
-            <Button
-                android:text="Accept"
-                android:gravity="center"
-                android:layout_column="2"
-                local:MvxBind="Click AcceptRequestCommand"
-                android:id="@+id/acceptButton"
-                android:layout_marginRight="0.0dp"
-                android:layout_weight="1"
-                android:textAllCaps="false"
-                android:maxWidth="30dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="12sp"
-                android:backgroundTint="#ff689f38"
-                android:elevation="3dp" />
-            <Button
-                android:text="Deny"
-                android:gravity="center"
-                android:layout_column="3"
-                local:MvxBind="Click DenyRequestCommand"
-                android:id="@+id/denyButton"
-                android:layout_marginRight="0.0dp"
-                android:layout_weight="1"
-                android:autoText="true"
-                android:textAllCaps="false"
-                android:maxWidth="20dp"
-                android:textSize="12sp"
-                android:backgroundTint="#ffb71c1c" />
         </TableRow>
     </TableLayout>
 </LinearLayout>

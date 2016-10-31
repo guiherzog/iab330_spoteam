@@ -132,6 +132,7 @@
     <Compile Include="Views\LocationAccept.cs" />
     <Compile Include="Views\GroupPage.cs" />
     <Compile Include="Views\ProfilePage.cs" />
+    <Compile Include="Views\RequestDetails.cs" />
     <Compile Include="Views\SecondView.cs" />
     <Compile Include="Views\TeamPage.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
@@ -169,6 +170,9 @@
     </AndroidResource>
     <AndroidResource Include="Resources\layout\Update.axml" />
     <AndroidResource Include="Resources\layout\RequestListLayout.axml" />
+    <AndroidResource Include="Resources\layout\RequestDetails.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\TeamPage.axml">

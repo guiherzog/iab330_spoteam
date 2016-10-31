@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        local:MvxBind="Text RequesterUser"
+        android:id="@+id/textView1"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:gravity="center" />
+    <TextView
+        android:text="is asking your location"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:gravity="center" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/linearLayout1"
+        android:gravity="center">
+        <Button
+            android:text="Accept"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:id="@+id/btn_accept"
+            local:MvxBind="Click AcceptRequestCommand"
+            android:backgroundTint="#ff689f38" />
+        <Button
+            android:text="Deny"
+            android:layout_height="match_parent"
+            android:id="@+id/btn_deny"
+            android:layout_width="150dp"
+            local:MvxBind="Click DenyRequestCommand"
+            android:backgroundTint="#ffb71c1c" />
+    </LinearLayout>
+</LinearLayout>

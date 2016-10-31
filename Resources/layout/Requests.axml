@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <MvxListView
-        local:MvxBind="ItemsSource RequestList"
+        local:MvxBind="ItemsSource RequestList; ItemClick SelectRequestCommand"
         local:MvxItemTemplate="@layout/requestlistlayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="40dp"
         android:layout_weight="70"
         android:background="#ffffff"
-        android:id="@+id/requestListView"/>
+        android:id="@+id/requestListView" />
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
