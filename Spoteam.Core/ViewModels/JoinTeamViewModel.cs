@@ -44,10 +44,38 @@ namespace Spoteam.Core
                 Settings.UserEmail = user.email;
                 Settings.TeamId = user.teamId;
             }
-            else
+			else {
+				LoginMessage = result.message;
+				toggleErrorMessage();
                 Debug.WriteLine("Error: Check your account and team id.");
+			}
 
         }
+
+		private bool _boolInViewModel = false; 
+	    public bool BoolInViewModel
+	    {
+	        get { return _boolInViewModel; }
+	        set { _boolInViewModel = value; RaisePropertyChanged(() => BoolInViewModel);}
+	    }
+
+		private void toggleErrorMessage(){
+			BoolInViewModel = !BoolInViewModel;
+		}
+
+		private string _loginMessage;
+		public string LoginMessage
+		{
+			get { return _loginMessage; }
+			set
+			{
+				if (value != null && value != _loginMessage)
+				{
+					_loginMessage = value;
+					RaisePropertyChanged(() => LoginMessage);
+				}
+			}
+		}
 
 		public string TeamCode
 		{
