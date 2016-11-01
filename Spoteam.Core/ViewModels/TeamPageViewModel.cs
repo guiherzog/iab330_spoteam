@@ -8,6 +8,7 @@ using Spoteam.Core.Utils;
 using Spoteam.Core.Helpers;
 using System.Diagnostics;
 using MvvmCross.Platform;
+using System;
 
 namespace Spoteam.Core.ViewModels
 {
@@ -100,7 +101,8 @@ namespace Spoteam.Core.ViewModels
                     break;
                 case "request":
 					toast.Show("Requesting user location.");
-					Request request = new Request(Settings.UserEmail, user.email, null, "waiting");
+					DateTime now = DateTime.Now;
+					Request request = new Request(Settings.UserEmail, user.email, now, "waiting");
                     MessageResult result = await api.CreateRequest(request);
                     if (result != null && result.status == "success") {
 						toast.Show("Location of " + user.name + " requested.");
@@ -130,15 +132,14 @@ namespace Spoteam.Core.ViewModels
             }
         }
 
-        public ICommand RequestsPageCommand
+        public ICommand TeamRequestsPageCommand
         {
             get
             {
-                return new MvxCommand(() => ShowViewModel<RequestsViewModel>());
+                return new MvxCommand(() => ShowViewModel<TeamRequestsViewModel>());
             }
         }
 
-		// Changes to TeamPage when clicked on My Team button.
         public ICommand TeamPageCommand
         {
             get
@@ -147,7 +148,6 @@ namespace Spoteam.Core.ViewModels
             }
         }
 
-		// Changes to ProfilePage when clicked on Settings button.
         public ICommand ProfilePageCommand
         {
             get
@@ -156,12 +156,20 @@ namespace Spoteam.Core.ViewModels
             }
         }
 
-		// Changes to ProfilePage when clicked on Settings button.
 		public ICommand UpdatePageCommand
 		{
 			get
 			{
 				return new MvxCommand(() => ShowViewModel<UpdateViewModel>());
+			}
+		}
+
+		// Switch to MyRequestsPage
+		public ICommand MyRequestsPageCommand
+		{
+			get
+			{
+				return new MvxCommand(() => ShowViewModel<MyRequestsViewModel>());
 			}
 		}
     }

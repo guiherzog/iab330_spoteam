@@ -28,9 +28,9 @@ namespace Spoteam.Core {
         }
 
         private async void finalizeRequest(string status) {
-            MessageResult result = await api.UpdateRequest(selectedRequest.requesterUser, selectedRequest.requestedUser, status);
+            MessageResult result = await api.UpdateRequest(selectedRequest.requesterUser, selectedRequest.requestedUser, "waiting", status);
             if (result != null && result.status == "success") {
-                ShowViewModel<RequestsViewModel>();
+                ShowViewModel<TeamRequestsViewModel>();
             } else {
                 //Connection error
             }

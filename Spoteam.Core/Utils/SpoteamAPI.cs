@@ -35,7 +35,13 @@ namespace Spoteam.Core.Utils
 		}
 
         public async Task<MessageResult> CreateRequest(Request request) {
-            string URL = String.Format("{0}/create/request?requesterUser={1}&requestedUser={2}&status={3}", server, request.requesterUser, request.requestedUser, request.status);
+			string sqlTime = "";
+			if (request.time != null)
+			{
+				DateTime time = (DateTime)request.time;
+				sqlTime = time.ToString("yyyy-MM-dd HH:mm:ss");
+			}
+			string URL = String.Format("{0}/create/request?requesterUser={1}&requestedUser={2}&status={3}&time={4}", server, request.requesterUser, request.requestedUser, request.status, sqlTime);
             Debug.WriteLine(URL);
             var uri = new Uri(URL);
             var response = await client.GetAsync(uri);
@@ -64,8 +70,8 @@ namespace Spoteam.Core.Utils
             }
         }
 
-        public async Task<MessageResult> UpdateRequest(string requesterUser, string requestedUser, string status) {
-            string URL = String.Format("{0}/request?requester={1}&requested={2}&status={3}", server, requesterUser, requestedUser, status);
+		public async Task<MessageResult> UpdateRequest(string requesterUser, string requestedUser, string oldStatus, string newStatus) {
+			string URL = String.Format("{0}/request/{1}?requester={2}&requested={3}&status={4}", server, oldStatus, requesterUser, requestedUser, newStatus);
             var uri = new Uri(URL);
             var response = await client.GetAsync(uri);
             if (response.IsSuccessStatusCode) {
@@ -102,7 +108,7 @@ namespace Spoteam.Core.Utils
 			}
 		}
 
-        public async Task<GetRequestResult> GetWaitingRequests(User user) {
+        public async Task<GetRequestResult> GetTeamRequests(User user) {
             string URL = String.Format("{0}/get/{1}?{2}={3}&{4}={5}", server, "request", "requestedUser", user.email, "status", "waiting");
             var uri = new Uri(URL);
             var response = await client.GetAsync(uri);
@@ -113,6 +119,21 @@ namespace Spoteam.Core.Utils
                 return null;
             }
         }
+
+		public async Task<GetRequestResult> GetMyRequests(User user)
+		{
+			string URL = String.Format("{0}/myrequests?{1}={2}", server, "requesterUser", user.email);
+			var uri = new Uri(URL);
+			var response = await client.GetAsync(uri);
+			if (response.IsSuccessStatusCode)
+			{
+				string content = await response.Content.ReadAsStringAsync();
+				return JsonConvert.DeserializeObject<GetRequestResult>(content);
+			}
+			else {
+				return null;
+			}
+		}
 
         public async Task<Object> Get(string table) {
             string URL = String.Format("{0}/get/{1}", server, table);

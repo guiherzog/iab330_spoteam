@@ -11,7 +11,7 @@ using Spoteam.Core.Helpers;
 
 namespace Spoteam.Core
 {
-	public class RequestsViewModel : MvxViewModel
+	public class TeamRequestsViewModel : MvxViewModel
 	{
         private ObservableCollection<Request> requests;
         SpoteamAPI api = new SpoteamAPI();
@@ -23,7 +23,7 @@ namespace Spoteam.Core
         }
 
         private async void listRequests() {
-            GetRequestResult result = (GetRequestResult) await api.GetWaitingRequests(user);
+            GetRequestResult result = (GetRequestResult) await api.GetTeamRequests(user);
             if (result != null && result.status == "success") {
                 if (result.rows.Count > 0) {
                     RequestList = new ObservableCollection<Request>(result.rows);
@@ -50,12 +50,11 @@ namespace Spoteam.Core
             }
         }
 
-        // Requests called on the bottom buttons
-        public ICommand RequestsPageCommand
+        public ICommand TeamRequestsPageCommand
 		{
 			get
 			{
-				return new MvxCommand(() => ShowViewModel<RequestsViewModel>());
+				return new MvxCommand(() => ShowViewModel<TeamRequestsViewModel>());
 			}
 		}
 
@@ -67,11 +66,11 @@ namespace Spoteam.Core
 			}
 		}
 
-		public ICommand UpdatePageCommand
+		public ICommand MyRequestsPageCommand
 		{
 			get
 			{
-				return new MvxCommand(() => ShowViewModel<UpdateViewModel>());
+				return new MvxCommand(() => ShowViewModel<MyRequestsViewModel>());
 			}
 		}
 

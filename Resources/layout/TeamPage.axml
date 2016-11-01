@@ -16,31 +16,39 @@
             android:id="@+id/tableRow1"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:background="#595f6d">
-            <ImageView
-                android:src="@drawable/xui"
-                android:layout_column="0"
-                android:id="@+id/imageView1"
-                android:layout_height="50dp"
-                android:layout_width="50dp"
-                android:layout_marginRight="10.0dp" />
+            android:background="#595f6d"
+            android:elevation="5dp">
             <TextView
                 local:MvxBind="Text UserName"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:gravity="left"
-                android:layout_column="1"
-                android:layout_width="183.5dp" />
+                android:layout_column="0"
+                android:layout_width="160dp" />
             <Button
-                android:text="Settings"
+                android:text="Update"
                 android:gravity="center"
                 android:layout_column="2"
-                local:MvxBind="Click ProfilePageCommand"
-                android:id="@+id/button2"
+                local:MvxBind="Click UpdatePageCommand"
+                android:id="@+id/updateButton"
                 android:layout_marginRight="0.0dp"
                 android:layout_weight="1"
                 android:autoText="true"
                 android:textAllCaps="false"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                android:backgroundTint="#e6e6e6"
+                android:textColor="#000000" />
+            <Button
+                android:text="Settings"
+                android:gravity="center"
+                local:MvxBind="Click ProfilePageCommand"
+                android:id="@+id/settingsButton"
+                android:layout_marginRight="0.0dp"
+                android:layout_weight="1"
+                android:autoText="true"
+                android:textAllCaps="false"
+                android:textSize="12sp"
+                android:textColor="#000000"
+                android:backgroundTint="#fff5f5f5" />
         </TableRow>
     </TableLayout>
     <MvxListView
@@ -67,7 +75,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/navButtonLeft"
-            local:MvxBind="Click RequestsPageCommand"
+            local:MvxBind="Click TeamRequestsPageCommand"
             android:background="#595f6d"
             android:textColor="#efefef"
             android:textAllCaps="false" />
@@ -87,7 +95,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/navButtonRight"
-            local:MvxBind="Click UpdatePageCommand"
+            local:MvxBind="Click MyRequestsPageCommand"
             android:background="#595f6d"
             android:textColor="#efefef"
             android:layout_marginRight="0.0dp"

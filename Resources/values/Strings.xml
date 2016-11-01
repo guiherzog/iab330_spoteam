@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="ApplicationName">Spoteam App</string>
-	<string name="navLeftButtonText">My Requests</string>
+	<string name="navLeftButtonText">Team Requests</string>
 	<string name="navMiddleButtonText">My Team</string>
-	<string name="navRightButtonText">Update</string>
+	<string name="navRightButtonText">My Requests</string>
 	
 	<string name="loginInvalid">Email or Password invalid.</string>
 	

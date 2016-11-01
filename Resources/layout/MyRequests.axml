@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
     <MvxListView
         local:MvxBind="ItemsSource RequestList; ItemClick SelectRequestCommand"
-        local:MvxItemTemplate="@layout/requestlistlayout"
+        local:MvxItemTemplate="@layout/myrequestlistlayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="40dp"
@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/navButtonLeft"
-            local:MvxBind="Click RequestsPageCommand"
+            local:MvxBind="Click TeamRequestsPageCommand"
             android:background="#595f6d"
             android:textColor="#efefef"
             android:textAllCaps="false" />
@@ -49,7 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/navButtonRight"
-            local:MvxBind="Click UpdatePageCommand"
+            local:MvxBind="Click MyRequestsPageCommand"
             android:background="#595f6d"
             android:textColor="#efefef"
             android:layout_marginRight="0.0dp"

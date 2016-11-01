@@ -84,11 +84,11 @@ namespace Spoteam.Core
 		}
 
 		// Requests called on the bottom buttons
-		public ICommand RequestsPageCommand
+		public ICommand TeamRequestsPageCommand
 		{
 			get
 			{
-				return new MvxCommand(() => ShowViewModel<RequestsViewModel>());
+				return new MvxCommand(() => ShowViewModel<TeamRequestsViewModel>());
 			}
 		}
 
@@ -100,11 +100,11 @@ namespace Spoteam.Core
 			}
 		}
 
-		public ICommand UpdatePageCommand
+		public ICommand MyRequestsPageCommand
 		{
 			get
 			{
-				return new MvxCommand(() => ShowViewModel<UpdateViewModel>());
+				return new MvxCommand(() => ShowViewModel<MyRequestsViewModel>());
 			}
 		}
 	}

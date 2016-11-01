@@ -7,11 +7,11 @@ namespace Spoteam.Core
 {
 	public class ProfilePageViewModel : MvxViewModel
 	{
-		public ICommand RequestsPageCommand
+		public ICommand TeamRequestsPageCommand
 		{
 			get
 			{
-				return new MvxCommand(() => ShowViewModel<RequestsViewModel>());
+				return new MvxCommand(() => ShowViewModel<TeamRequestsViewModel>());
 			}
 		}
 		public ICommand TeamPageCommand
@@ -21,11 +21,11 @@ namespace Spoteam.Core
 				return new MvxCommand(() => ShowViewModel<TeamPageViewModel>());
 			}
 		}
-		public ICommand ProfilePageCommand
+		public ICommand MyRequestsPageCommand
 		{
 			get
 			{
-				return new MvxCommand(() => ShowViewModel<ProfilePageViewModel>());
+				return new MvxCommand(() => ShowViewModel<MyRequestsViewModel>());
 			}
 		}
 	}

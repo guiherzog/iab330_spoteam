@@ -5,12 +5,13 @@ using MvvmCross.Droid.Views;
 namespace Spoteam_App.Views
 {
 	[Activity(Label = "My Requests")]
-	public class RequestsView : MvxActivity
+	public class MyRequests : MvxActivity
 	{
 		protected override void OnCreate(Bundle requests)
 		{
 			base.OnCreate(requests);
-			SetContentView(Resource.Layout.Requests);
+			SetContentView(Resource.Layout.MyRequests);
 		}
 	}
 }
+	

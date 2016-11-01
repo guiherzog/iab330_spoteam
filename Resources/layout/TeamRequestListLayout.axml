@@ -24,13 +24,6 @@
             android:elevation="5dp"
             android:showDividers="none"
             android:contextClickable="true">
-            <ImageView
-                android:src="@drawable/st"
-                android:layout_column="0"
-                android:id="@+id/imageView1"
-                android:layout_height="50dp"
-                android:layout_width="50dp"
-                android:layout_margin="10.0dp" />
             <TextView
                 local:MvxBind="Text requesterUser"
                 android:textAppearance="?android:attr/textAppearanceLarge"
