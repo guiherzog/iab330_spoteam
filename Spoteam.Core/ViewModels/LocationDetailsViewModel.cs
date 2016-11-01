@@ -13,9 +13,6 @@ namespace Spoteam.Core.ViewModels
 
 		private string selectedusername;
 
-		private SpoteamAPI spoteamAPI = new SpoteamAPI();
-
-
 		public string UserName
 		{
 			get { return selectedusername; }

@@ -99,19 +99,17 @@ namespace Spoteam.Core.ViewModels
                     //Toast: This user is currently user.status. Try again later.
                     break;
                 case "request":
-                    //Debug.WriteLine("Start Request");
-                    //GetRequestResult result = (GetRequestResult)await api.Get("request");
-                    //Debug.WriteLine("End Request - Result = " + result);
-                    Request request = new Request(Settings.UserEmail, user.email, null, "waiting");
+					toast.Show("Requesting user location.");
+					Request request = new Request(Settings.UserEmail, user.email, null, "waiting");
                     MessageResult result = await api.CreateRequest(request);
-                    Debug.WriteLine("End Request - Result = " + result);
-                    //if (result != null && result.status == "success") {
-                    //    toast.Show("Requesting user location.");
-                    //    //Toast: Requesting user location.
-                    //} else {
-                    //    toast.Show("Error requesting user location.");
-                    //    //Toast: Error requesting user location.
-                    //}
+                    if (result != null && result.status == "success") {
+						toast.Show("Location of " + user.name + " requested.");
+                        //Toast: Requesting user location.
+                    } else {
+                        toast.Show("Error requesting user location.");
+                        //Toast: Error requesting user location.
+                    }
+					
                     break;
                 case "available":
                     if (user.locationId != null) {
@@ -125,7 +123,6 @@ namespace Spoteam.Core.ViewModels
                     } else {
                         toast.Show("Location unavailable for this user.");
                     }
-                    toast.Show("User is currently at " + user.locationId + ".");
                     //Toast: User is currently at (SpoteamAPI.get("location", user.locationId).rows[0].name).
                     break;
                 default:
