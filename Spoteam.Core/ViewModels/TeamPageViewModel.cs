@@ -7,6 +7,7 @@ using Spoteam.Core.Model;
 using Spoteam.Core.Utils;
 using Spoteam.Core.Helpers;
 using System.Diagnostics;
+using MvvmCross.Platform;
 
 namespace Spoteam.Core.ViewModels
 {
@@ -90,26 +91,41 @@ namespace Spoteam.Core.ViewModels
 
         public async void locateUser(User user) {
             Debug.WriteLine(user.status);
+            var toast = Mvx.Resolve<IToast>();
             switch (user.status) {
                 case "offline":
                 case "busy":
+                    toast.Show("This user is currently " + user.status + ". Try again later.");
                     //Toast: This user is currently user.status. Try again later.
                     break;
                 case "request":
+                    //Debug.WriteLine("Start Request");
+                    //GetRequestResult result = (GetRequestResult)await api.Get("request");
+                    //Debug.WriteLine("End Request - Result = " + result);
                     Request request = new Request(Settings.UserEmail, user.email, null, "waiting");
                     MessageResult result = await api.CreateRequest(request);
-                    if (result == null) {
-                        Debug.WriteLine("result == null");
-                    } else {
-                        Debug.WriteLine(result.status + " - Message: " + result.message);
-                    }
-                    if (result != null && result.status == "success") {
-                        //Toast: Requesting user location.
-                    } else {
-                        //Toast: Error requesting user location.
-                    }
+                    Debug.WriteLine("End Request - Result = " + result);
+                    //if (result != null && result.status == "success") {
+                    //    toast.Show("Requesting user location.");
+                    //    //Toast: Requesting user location.
+                    //} else {
+                    //    toast.Show("Error requesting user location.");
+                    //    //Toast: Error requesting user location.
+                    //}
                     break;
                 case "available":
+                    if (user.locationId != null) {
+                        Debug.WriteLine("start api.get.location");
+                        GetLocationResult locationResult = (GetLocationResult) await api.Get("location", "id", user.locationId.ToString());
+                        Debug.WriteLine("end api.get.location");
+                        if (locationResult != null && locationResult.status == "success")
+                            toast.Show("User is currently at " + locationResult.rows[0].name + ".");
+                        else
+                            toast.Show("Request Error: Check your connection and try again.");
+                    } else {
+                        toast.Show("Location unavailable for this user.");
+                    }
+                    toast.Show("User is currently at " + user.locationId + ".");
                     //Toast: User is currently at (SpoteamAPI.get("location", user.locationId).rows[0].name).
                     break;
                 default:
