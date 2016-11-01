@@ -100,7 +100,7 @@
     <Compile Include="Setup.cs" />
     <Compile Include="SplashScreen.cs" />
     <Compile Include="Utils\Toast.cs" />
-    <Compile Include="Views\JoinTeam.cs" />
+    <Compile Include="Views\JoinCreateTeam.cs" />
     <Compile Include="Views\LocationDeny.cs" />
     <Compile Include="Views\LocationAccept.cs" />
     <Compile Include="Views\GroupPage.cs" />
@@ -108,8 +108,10 @@
     <Compile Include="Views\RequestDetails.cs" />
     <Compile Include="Views\LocationDetails.cs" />
     <Compile Include="Views\TeamPage.cs" />
-    <Compile Include="Views\RequestsView.cs" />
+    <Compile Include="Views\TeamRequests.cs" />
     <Compile Include="Views\Update.cs" />
+    <Compile Include="Views\MyRequests.cs" />
+    <Compile Include="Views\LoginRegisterAccount.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">
@@ -134,18 +136,21 @@
     <AndroidResource Include="Resources\layout\UserSearchLayout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\Join.axml">
+    <AndroidResource Include="Resources\layout\LoginRegisterAccount.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\fab_add.png" />
-    <AndroidResource Include="Resources\layout\Requests.axml">
+    <AndroidResource Include="Resources\layout\TeamRequests.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\Update.axml" />
-    <AndroidResource Include="Resources\layout\RequestListLayout.axml" />
+    <AndroidResource Include="Resources\layout\MyRequestListLayout.axml" />
     <AndroidResource Include="Resources\layout\RequestDetails.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\MyRequests.axml" />
+    <AndroidResource Include="Resources\layout\TeamRequestListLayout.axml" />
+    <AndroidResource Include="Resources\layout\JoinCreateTeam.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\TeamPage.axml">
