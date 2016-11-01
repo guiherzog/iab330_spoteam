@@ -16,7 +16,7 @@
             android:id="@+id/tableRow1"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:background="#595f6d"
+            android:background="#343740"
             android:elevation="5dp">
             <TextView
                 local:MvxBind="Text UserName"
@@ -76,7 +76,7 @@
             android:layout_height="match_parent"
             android:id="@+id/navButtonLeft"
             local:MvxBind="Click TeamRequestsPageCommand"
-            android:background="#595f6d"
+            android:background="#343740"
             android:textColor="#efefef"
             android:textAllCaps="false" />
         <Button
@@ -86,7 +86,7 @@
             android:layout_height="match_parent"
             android:id="@+id/navButtonMiddle"
             local:MvxBind="Click TeamPageCommand"
-            android:background="#595f6d"
+            android:background="#343740"
             android:textColor="#efefef"
             android:textAllCaps="false" />
         <Button
@@ -96,7 +96,7 @@
             android:layout_height="match_parent"
             android:id="@+id/navButtonRight"
             local:MvxBind="Click MyRequestsPageCommand"
-            android:background="#595f6d"
+            android:background="#343740"
             android:textColor="#efefef"
             android:layout_marginRight="0.0dp"
             android:textAllCaps="false" />

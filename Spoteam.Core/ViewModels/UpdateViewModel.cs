@@ -12,6 +12,9 @@ namespace Spoteam.Core
 	public class UpdateViewModel : MvxViewModel
 	{
 		private string _location = "Room Name";
+		private string _buttonText = "Update";
+		private string ButtonType = "update";
+
         private SpoteamAPI api = new SpoteamAPI();
 
 		public string UserLocation
@@ -28,31 +31,67 @@ namespace Spoteam.Core
 		}
 
 		// When the user clicks to update their location, this function is called.
+		public ICommand CreateLocationCommand
+		{
+			get
+			{
+				return new MvxCommand(CreateLocation);
+			}
+		}
+
+		// When the user clicks to update their location, this function is called.
 		public ICommand UpdateLocationCommand
 		{
 			get
 			{
-				return new MvxCommand(UpdateLocation);
+				return new MvxCommand(updateOrCreateLocation);
 			}
 		}
 
-        public async void UpdateLocation() {
-            MessageResult result = await api.UpdateUserLocation(Settings.UserEmail, UserLocation);
+		public async void updateOrCreateLocation()
+		{
+			if (ButtonType == "update")
+				UpdateLocation();
+			else
+				CreateLocation();
+		}
 
+        public async void UpdateLocation() {
+            
+			MessageResult result = await api.UpdateUserLocation(Settings.UserEmail, UserLocation);
+			
             if (result != null && result.status == "success") {
                 ShowViewModel<TeamPageViewModel>();
             } 
 			else {
-
 				if (result == null)
 					UpdateMessage = "Server Error. Check your internet connection";
-				else
-					UpdateMessage = result.message;
+				else if (result.status == "error") {
+					ButtonType = "create";
+					ButtonText = "Create & Update";
+					UpdateMessage = result.message + " Want to create this location ?";
+				}
 				toggleErrorMessage();
-				Debug.WriteLine("Error: Check your account and team id.");
 			}
 
         }
+
+		public async void CreateLocation()
+		{
+			Debug.WriteLine("Creating a new location" + UserLocation);
+			MessageResult result = await api.CreateLocation(new Location(0, UserLocation, ""));
+
+			if (result != null && result.status == "success")
+			{
+				UpdateLocation();
+			}
+			else {
+				if (result == null)
+					UpdateMessage = "Server Error. Check your internet connection";
+				toggleErrorMessage();
+			}
+		}
+
 
 
 		// Show error messages when trying to update location;
@@ -79,6 +118,19 @@ namespace Spoteam.Core
 				{
 					_updateMessage = value;
 					RaisePropertyChanged(() => UpdateMessage);
+				}
+			}
+		}
+
+		public string ButtonText
+		{
+			get { return _buttonText; }
+			set
+			{
+				if (value != null && value != _buttonText)
+				{
+					_buttonText = value;
+					RaisePropertyChanged(() => ButtonText);
 				}
 			}
 		}

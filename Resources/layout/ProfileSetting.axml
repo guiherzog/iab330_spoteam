@@ -14,15 +14,10 @@
         android:layout_height="match_parent"
         android:layout_weight="9"
         android:id="@+id/linearLayout3"
-        android:background="#fff">
-        <ImageView
-            android:src="@drawable/xui"
-            android:layout_width="match_parent"
-            android:layout_height="260.5dp"
-            android:id="@+id/imageView1"
-            android:padding="20dp" />
+        android:background="#fff"
+        android:gravity="center">
         <TextView
-            android:text="Xui"
+            local:MvxBind="Text UserName"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -41,44 +36,25 @@
             android:id="@+id/textView2"
             android:textColor="#ff212121"
             android:gravity="center" />
-        <RadioGroup
+        <MvxRadioGroup
             android:minWidth="25px"
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/radioGroup1">
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="Send location automatically"
-                android:id="@+id/radioButton1"
-                android:textColor="#000"
-                android:layout_gravity="center_horizontal" />
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="Request Only"
-                android:id="@+id/radioButton2"
-                android:textColor="#000"
-                android:layout_gravity="center_horizontal" />
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Busy"
-                android:id="@+id/radioButton3"
-                android:textColor="#000"
-                android:layout_gravity="center_horizontal" />
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Offline"
-                android:id="@+id/radioButton4"
-                android:textColor="#000"
-                android:layout_gravity="center_horizontal"
-                android:drawableTint="#ffd50000" />
-        </RadioGroup>
+            android:id="@+id/radioGroup1"
+            local:MvxItemTemplate="@layout/itemradiolayout"
+            local:MvxBind="ItemsSource Items; SelectedItem SelectedItem"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:layout_gravity="center" />
+        <Button
+            android:text="Update"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:id="@+id/btn_accept"
+            local:MvxBind="Click UpdateStatusCommand"
+            android:backgroundTint="#ff689f38"
+            android:layout_gravity="center" />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -97,7 +73,7 @@
             android:layout_height="match_parent"
             android:id="@+id/navButtonLeft"
             local:MvxBind="Click TeamRequestsPageCommand"
-            android:background="#595f6d"
+            android:background="#343740"
             android:textColor="#efefef"
             android:textAllCaps="false" />
         <Button
@@ -107,7 +83,7 @@
             android:layout_height="match_parent"
             android:id="@+id/navButtonMiddle"
             local:MvxBind="Click TeamPageCommand"
-            android:background="#595f6d"
+            android:background="#343740"
             android:textColor="#efefef"
             android:textAllCaps="false" />
         <Button
@@ -117,7 +93,7 @@
             android:layout_height="match_parent"
             android:id="@+id/navButtonRight"
             local:MvxBind="Click MyRequestsPageCommand"
-            android:background="#595f6d"
+            android:background="#343740"
             android:textColor="#efefef"
             android:layout_marginRight="0.0dp"
             android:textAllCaps="false" />

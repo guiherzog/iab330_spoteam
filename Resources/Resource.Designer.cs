@@ -138,14 +138,14 @@ namespace Spoteam_App
 			// aapt resource value: 0x7f040001
 			public const int MvxBindingTagUnique = 2130968577;
 			
-			// aapt resource value: 0x7f040025
-			public const int btn_accept = 2130968613;
+			// aapt resource value: 0x7f04001f
+			public const int btn_accept = 2130968607;
 			
-			// aapt resource value: 0x7f040024
-			public const int btn_back = 2130968612;
+			// aapt resource value: 0x7f040021
+			public const int btn_back = 2130968609;
 			
-			// aapt resource value: 0x7f040026
-			public const int btn_deny = 2130968614;
+			// aapt resource value: 0x7f040022
+			public const int btn_deny = 2130968610;
 			
 			// aapt resource value: 0x7f04000e
 			public const int btn_group = 2130968590;
@@ -159,11 +159,14 @@ namespace Spoteam_App
 			// aapt resource value: 0x7f040006
 			public const int btn_tryagain = 2130968582;
 			
+			// aapt resource value: 0x7f040029
+			public const int createButton = 2130968617;
+			
 			// aapt resource value: 0x7f040002
 			public const int imageView1 = 2130968578;
 			
-			// aapt resource value: 0x7f040023
-			public const int imageView2 = 2130968611;
+			// aapt resource value: 0x7f040020
+			public const int imageView2 = 2130968608;
 			
 			// aapt resource value: 0x7f040014
 			public const int joinButton = 2130968596;
@@ -189,26 +192,14 @@ namespace Spoteam_App
 			// aapt resource value: 0x7f04001c
 			public const int navButtonRight = 2130968604;
 			
-			// aapt resource value: 0x7f04001f
-			public const int radioButton1 = 2130968607;
-			
-			// aapt resource value: 0x7f040020
-			public const int radioButton2 = 2130968608;
-			
-			// aapt resource value: 0x7f040021
-			public const int radioButton3 = 2130968609;
-			
-			// aapt resource value: 0x7f040022
-			public const int radioButton4 = 2130968610;
-			
 			// aapt resource value: 0x7f04001e
 			public const int radioGroup1 = 2130968606;
 			
 			// aapt resource value: 0x7f040018
 			public const int requestListView = 2130968600;
 			
-			// aapt resource value: 0x7f040028
-			public const int settingsButton = 2130968616;
+			// aapt resource value: 0x7f040024
+			public const int settingsButton = 2130968612;
 			
 			// aapt resource value: 0x7f040007
 			public const int tableLayout1 = 2130968583;
@@ -243,20 +234,20 @@ namespace Spoteam_App
 			// aapt resource value: 0x7f040015
 			public const int tnameText = 2130968597;
 			
-			// aapt resource value: 0x7f040027
-			public const int updateButton = 2130968615;
+			// aapt resource value: 0x7f040023
+			public const int updateButton = 2130968611;
 			
-			// aapt resource value: 0x7f04002c
-			public const int updateMessage = 2130968620;
+			// aapt resource value: 0x7f040028
+			public const int updateMessage = 2130968616;
 			
-			// aapt resource value: 0x7f04002a
-			public const int updateText = 2130968618;
+			// aapt resource value: 0x7f040026
+			public const int updateText = 2130968614;
 			
 			// aapt resource value: 0x7f040016
 			public const int userEmail = 2130968598;
 			
-			// aapt resource value: 0x7f04002b
-			public const int userLocation = 2130968619;
+			// aapt resource value: 0x7f040027
+			public const int userLocation = 2130968615;
 			
 			// aapt resource value: 0x7f040012
 			public const int userName = 2130968594;
@@ -264,8 +255,8 @@ namespace Spoteam_App
 			// aapt resource value: 0x7f040009
 			public const int username_text = 2130968585;
 			
-			// aapt resource value: 0x7f040029
-			public const int usersListView = 2130968617;
+			// aapt resource value: 0x7f040025
+			public const int usersListView = 2130968613;
 			
 			static Id()
 			{
@@ -287,46 +278,49 @@ namespace Spoteam_App
 			public const int Group = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int JoinCreateTeam = 2130903042;
+			public const int ItemRadioLayout = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int LocationDetails = 2130903043;
+			public const int JoinCreateTeam = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int LoginRegisterAccount = 2130903044;
+			public const int LocationDetails = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int MyRequestListLayout = 2130903045;
+			public const int LoginRegisterAccount = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int MyRequests = 2130903046;
+			public const int MyRequestListLayout = 2130903046;
 			
 			// aapt resource value: 0x7f030007
-			public const int ProfileSetting = 2130903047;
+			public const int MyRequests = 2130903047;
 			
 			// aapt resource value: 0x7f030008
-			public const int RequestAccepted = 2130903048;
+			public const int ProfileSetting = 2130903048;
 			
 			// aapt resource value: 0x7f030009
-			public const int RequestDetails = 2130903049;
+			public const int RequestAccepted = 2130903049;
 			
 			// aapt resource value: 0x7f03000a
-			public const int SplashScreen = 2130903050;
+			public const int RequestDetails = 2130903050;
 			
 			// aapt resource value: 0x7f03000b
-			public const int TeamPage = 2130903051;
+			public const int SplashScreen = 2130903051;
 			
 			// aapt resource value: 0x7f03000c
-			public const int TeamRequestListLayout = 2130903052;
+			public const int TeamPage = 2130903052;
 			
 			// aapt resource value: 0x7f03000d
-			public const int TeamRequests = 2130903053;
+			public const int TeamRequestListLayout = 2130903053;
 			
 			// aapt resource value: 0x7f03000e
-			public const int Update = 2130903054;
+			public const int TeamRequests = 2130903054;
 			
 			// aapt resource value: 0x7f03000f
-			public const int UserSearchLayout = 2130903055;
+			public const int Update = 2130903055;
+			
+			// aapt resource value: 0x7f030010
+			public const int UserSearchLayout = 2130903056;
 			
 			static Layout()
 			{

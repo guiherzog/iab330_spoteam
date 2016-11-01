@@ -151,6 +151,7 @@
     <AndroidResource Include="Resources\layout\MyRequests.axml" />
     <AndroidResource Include="Resources\layout\TeamRequestListLayout.axml" />
     <AndroidResource Include="Resources\layout\JoinCreateTeam.axml" />
+    <AndroidResource Include="Resources\layout\ItemRadioLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\TeamPage.axml">

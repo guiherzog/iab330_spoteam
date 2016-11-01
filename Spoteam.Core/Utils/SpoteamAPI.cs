@@ -49,6 +49,37 @@ namespace Spoteam.Core.Utils
 			}
 		}
 
+		public async Task<MessageResult> UpdateUserStatus(string userEmail, string status)
+		{
+			string URL = String.Format("{0}/set/user/email?value={1}&status={2}", server, userEmail, status);
+			var uri = new Uri(URL);
+			Debug.WriteLine(URL);
+			var response = await client.GetAsync(uri);
+			if (response.IsSuccessStatusCode)
+			{
+				string content = await response.Content.ReadAsStringAsync();
+				return JsonConvert.DeserializeObject<MessageResult>(content);
+			}
+			else {
+				return null;
+			}
+		}
+
+		public async Task<MessageResult> CreateLocation(Location location)
+		{
+			string URL = String.Format("{0}/create/location?name={1}", server, location.name);
+			var uri = new Uri(URL);
+			var response = await client.GetAsync(uri);
+			if (response.IsSuccessStatusCode)
+			{
+				string content = await response.Content.ReadAsStringAsync();
+				return JsonConvert.DeserializeObject<MessageResult>(content);
+			}
+			else {
+				return null;
+			}
+		}
+
 		public async Task<MessageResult> CreateTeam(Team team)
 		{
 			string URL = String.Format("{0}/create/team?name={1}&id={2}", server, team.name, team.id);
@@ -109,9 +140,11 @@ namespace Spoteam.Core.Utils
                     string content = await response.Content.ReadAsStringAsync();
                     return JsonConvert.DeserializeObject<MessageResult>(content);
                 } else {
-                    return null;
+					return null;
                 }
             } else {
+				if (result.rows.Count == 0)
+					return new MessageResult("error", "Location doesn't exist.");
                 return null;
             }
         }

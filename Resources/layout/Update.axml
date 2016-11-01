@@ -32,6 +32,13 @@
             android:layout_marginRight="20dp"
             android:hint="Location"
             local:MvxBind="Text UserLocation" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/updateButton"
+            local:MvxBind="Click UpdateLocationCommand; Text ButtonText"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp" />
         <TextView
             android:text="Message Label"
             android:textAppearance="?android:attr/textAppearanceSmall"
@@ -40,16 +47,16 @@
             android:id="@+id/updateMessage"
             android:gravity="center"
             android:textColor="#ffd05353"
-            local:MvxBind="Visibility Visibility(BoolInViewModel); Text UpdateMessage"
-            android:visibility="invisible" />
-        <Button
-            android:text="Update"
+            local:MvxBind="Text UpdateMessage" />
+        <Button xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/updateButton"
-            local:MvxBind="Click UpdateLocationCommand"
+            android:id="@+id/createButton"
+            android:visibility="invisible"
+            local:MvxBind="Click CreateLocationCommand;"
             android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp" />
+            android:layout_marginRight="30dp"
+            android:text="Create &amp; Update" />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"

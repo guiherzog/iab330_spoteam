@@ -60,6 +60,7 @@
     <Compile Include="ViewModels\UpdateViewModel.cs" />
     <Compile Include="ViewModels\MyRequestsViewModel.cs" />
     <Compile Include="ViewModels\LoginRegisterAccountViewModel.cs" />
+    <Compile Include="Model\Thing.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">
