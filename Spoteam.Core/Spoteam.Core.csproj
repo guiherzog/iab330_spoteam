@@ -55,10 +55,11 @@
     <Compile Include="ViewModels\GroupPageViewModel.cs" />
     <Compile Include="ViewModels\LocationAcceptedViewModel.cs" />
     <Compile Include="ViewModels\LocationDeniedViewModel.cs" />
-    <Compile Include="ViewModels\JoinTeamViewModel.cs" />
+    <Compile Include="ViewModels\JoinCreateTeamViewModel.cs" />
     <Compile Include="ViewModels\TeamRequestsViewModel.cs" />
     <Compile Include="ViewModels\UpdateViewModel.cs" />
     <Compile Include="ViewModels\MyRequestsViewModel.cs" />
+    <Compile Include="ViewModels\LoginRegisterAccountViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">

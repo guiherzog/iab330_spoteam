@@ -13,13 +13,15 @@ namespace Spoteam.Core.Models
         public string name { get; set; }
         public string img { get; set; }
         public int? locationId { get; set; }
-        public int teamId { get; set; }
+        public int? teamId { get; set; }
         public string status { get; set; }
+		public string password { get; set; }
 
         public User() { }
-        public User(string email, string name, string img, int? locationId, int teamId, string status) {
+        public User(string email, string name, string password, string img, int? locationId, int? teamId, string status) {
             this.email = email;
             this.name = name;
+			this.password = password;
             this.img = img;
             this.locationId = locationId;
             this.teamId = teamId;

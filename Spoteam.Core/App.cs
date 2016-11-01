@@ -13,10 +13,16 @@ namespace Spoteam.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-			if (Settings.UserEmail != string.Empty && Settings.UserName != string.Empty && Settings.TeamId != 0)
-				RegisterAppStart<TeamPageViewModel>();
+			if (Settings.UserEmail != string.Empty && Settings.UserName != string.Empty)
+				if (Settings.TeamId == 0)
+				{
+					RegisterAppStart<JoinCreateTeamViewModel>();
+				} 
+				else
+					RegisterAppStart<TeamPageViewModel>();
+
 			else
-				RegisterAppStart<JoinTeamViewModel>();
+				RegisterAppStart<LoginRegisterAccountViewModel>();
 
 		}
     }

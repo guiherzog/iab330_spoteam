@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#343740"
+    android:id="@+id/linearLayout1"
+    android:gravity="center">
+    <ImageView
+        android:src="@drawable/icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView1"
+        android:layout_weight="1"
+        android:padding="5dp"
+        android:layout_marginTop="30dp" />
+    <TextView
+        android:text="Welcome to SpoTeam App"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:gravity="center" />
+    <TextView
+        android:text="Login"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" />
+    <EditText
+        android:inputType="textPersonName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/userEmail"
+        android:hint="Email"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        local:MvxBind="Text UserEmail"
+        android:gravity="center" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/userEmail"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:hint="Password"
+        local:MvxBind="Text UserPassword"
+        android:phoneNumber="false"
+        android:password="true"
+        android:inputType="textPassword"
+        android:gravity="center" />
+    <TextView
+        android:text="@string/loginInvalid"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:gravity="center"
+        android:textColor="#ffd05353"
+        local:MvxBind="Visibility Visibility(BoolInViewModel); Text LoginMessage"
+        android:visibility="invisible" />
+    <Button
+        android:text="Login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/joinButton"
+        local:MvxBind="Click LoginCommand"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="50dp"
+        android:phoneNumber="false"
+        android:password="false"
+        android:backgroundTint="#efefef"
+        android:textColor="#000" />
+    <TextView
+        android:text="Create a New Account"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" />
+    <TextView
+        android:text="Fill all other fields above and your name below."
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4"
+        android:gravity="center"
+        android:textAllCaps="false" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/userName"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:hint="Name"
+        local:MvxBind="Text UserName"
+        android:gravity="center" />
+    <Button
+        android:text="Create Account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/joinButton"
+        local:MvxBind="Click CreateAccountCommand"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="50dp"
+        android:phoneNumber="false"
+        android:password="false"
+        android:backgroundTint="#efefef"
+        android:textColor="#000" />
+</LinearLayout>

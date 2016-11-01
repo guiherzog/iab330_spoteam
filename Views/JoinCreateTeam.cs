@@ -8,13 +8,13 @@ namespace Spoteam_App.Views
 {
 
     [Activity(Label = "Join Team")]
-    public class JoinTeam : MvxActivity
+    public class JoinCreateTeam : MvxActivity
     {
 		public NfcAdapter NFCdevice;
 
-        protected override void OnCreate(Bundle join)
+        protected override void OnCreate(Bundle bundle)
         {
-            base.OnCreate(join);
+            base.OnCreate(bundle);
 
 
 			NfcManager NfcManager = (NfcManager)Android.App.Application.Context.GetSystemService(Context.NfcService);
@@ -23,7 +23,7 @@ namespace Spoteam_App.Views
             if(NFCdevice != null)
 			    Log.Info("NFC Adapter",NFCdevice.ToString());
 
-			SetContentView(Resource.Layout.Join);
+			SetContentView(Resource.Layout.JoinCreateTeam);
         }
     }
 }

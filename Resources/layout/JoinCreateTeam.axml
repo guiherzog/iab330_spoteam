@@ -13,9 +13,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageView1"
         android:layout_weight="1"
-        android:padding="50dp" />
+        android:padding="10dp"
+        android:layout_marginTop="30dp" />
     <TextView
-        android:text="Create a New Account"
+        android:text="Create a New Team"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,18 +30,32 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/userName"
-        android:hint="Name"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        local:MvxBind="Text UserName" />
+        android:hint="Team Name"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        local:MvxBind="Text TeamName"
+        android:gravity="center" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/userEmail"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:hint="Email"
-        local:MvxBind="Text UserEmail" />
+        android:id="@+id/teamCode"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:hint="Unique Code"
+        local:MvxBind="Text TeamCode"
+        android:numeric="integer"
+        android:maxLength="10"
+        android:phoneNumber="true"
+        android:password="false"
+        android:inputType="number"
+        android:gravity="center" />
+    <TextView
+        android:text="This code must be only numbers and unique."
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:gravity="center" />
     <TextView
         android:text="@string/loginInvalid"
         android:textAppearance="?android:attr/textAppearanceSmall"
@@ -49,8 +64,23 @@
         android:id="@+id/textView2"
         android:gravity="center"
         android:textColor="#ffd05353"
-        local:MvxBind="Visibility Visibility(BoolInViewModel); Text LoginMessage"
+        local:MvxBind="Visibility Visibility(BoolInViewModel); Text JoinMessage"
         android:visibility="invisible" />
+    <Button
+        android:text="Create"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/joinButton"
+        local:MvxBind="Click CreateTeamCommand"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="50dp"
+        android:phoneNumber="false"
+        android:password="false"
+        android:backgroundTint="#efefef"
+        android:textColor="#343740"
+        android:textSize="20sp"
+        android:textAllCaps="false" />
     <TextView
         android:text="Join a Team"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -66,10 +96,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/teamCode"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
         android:hint="Team Code"
-        local:MvxBind="Text TeamCode" />
+        local:MvxBind="Text TeamCode"
+        android:maxLength="10"
+        android:phoneNumber="false"
+        android:password="false"
+        android:numeric="integer"
+        android:gravity="center" />
     <Button
         android:text="Join"
         android:layout_width="match_parent"
@@ -80,5 +115,10 @@
         android:layout_marginRight="30dp"
         android:layout_marginBottom="50dp"
         android:phoneNumber="false"
-        android:password="false" />
+        android:password="false"
+        android:backgroundTint="#efefef"
+        android:textColor="#343740"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:autoText="false" />
 </LinearLayout>

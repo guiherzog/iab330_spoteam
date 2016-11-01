@@ -19,9 +19,24 @@ namespace Spoteam.Core.Utils
 			client.MaxResponseContentBufferSize = 256000;
 		}
 
-		public async Task<MessageResult> CreateUser(User user)
+		public async Task<GetUserResult> GetUser(User user)
 		{
-			string URL = String.Format("{0}/create/user?name={1}&email={2}&teamId={3}&status={4}", server, user.name, user.email, user.teamId, user.status);
+			string URL = String.Format("{0}/get/user?email={1}&password={2}", server, user.email, user.password);
+			var uri = new Uri(URL);
+			var response = await client.GetAsync(uri);
+			if (response.IsSuccessStatusCode)
+			{
+				string content = await response.Content.ReadAsStringAsync();
+				return JsonConvert.DeserializeObject<GetUserResult >(content);
+			}
+			else {
+				return null;
+			}
+		}
+
+		public async Task<MessageResult> UpdateUserTeam(string userEmail, string teamCode)
+		{
+			string URL = String.Format("{0}/set/user/email?value={1}&teamId={2}", server, userEmail, teamCode);
 			var uri = new Uri(URL);
 			var response = await client.GetAsync(uri);
 			if (response.IsSuccessStatusCode)
@@ -33,6 +48,37 @@ namespace Spoteam.Core.Utils
 				return null;
 			}
 		}
+
+		public async Task<MessageResult> CreateTeam(Team team)
+		{
+			string URL = String.Format("{0}/create/team?name={1}&id={2}", server, team.name, team.id);
+			var uri = new Uri(URL);
+			var response = await client.GetAsync(uri);
+			if (response.IsSuccessStatusCode)
+			{
+				string content = await response.Content.ReadAsStringAsync();
+				return JsonConvert.DeserializeObject<MessageResult>(content);
+			}
+			else {
+				return null;
+			}
+		}
+
+		public async Task<MessageResult> CreateUser(User user)
+		{
+			string URL = String.Format("{0}/create/user?name={1}&email={2}&password={3}&status={4}", server, user.name, user.email, user.password, user.status);
+			var uri = new Uri(URL);
+			var response = await client.GetAsync(uri);
+			if (response.IsSuccessStatusCode)
+			{
+				string content = await response.Content.ReadAsStringAsync();
+				return JsonConvert.DeserializeObject<MessageResult>(content);
+			}
+			else {
+				return null;
+			}
+		}
+
 
         public async Task<MessageResult> CreateRequest(Request request) {
 			string sqlTime = "";
