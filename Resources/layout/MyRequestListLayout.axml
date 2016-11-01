@@ -11,11 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/tableLayout1"
-        android:layout_marginBottom="0.0dp"
-        android:stretchColumns="2"
-        android:layout_weight="9"
-        android:background="#ffffff"
-        android:shrinkColumns="3,2">
+        android:layout_weight="1"
+        android:background="#ffffff">
         <TableRow
             android:id="@+id/tableRow1"
             android:background="#595f6d"
@@ -23,44 +20,84 @@
             android:gravity="center"
             android:elevation="5dp"
             android:showDividers="none"
-            android:contextClickable="true">
-            <TextView
-                local:MvxBind="Text requestedUser"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:id="@+id/username_text"
-                android:gravity="left"
+            android:contextClickable="true"
+            android:minHeight="60dp"
+            android:paddingLeft="5dp"
+            android:nestedScrollingEnabled="false"
+            android:clickable="true"
+            android:animateLayoutChanges="true">
+            <LinearLayout
+                android:layout_weight="0.3"
+                android:orientation="vertical"
+                android:layout_column="0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+                <TextView
+                    android:text="Requested User"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:id="@+id/username_text"
+                    android:gravity="left"
+                    android:layout_column="0"
+                    android:autoText="false"
+                    android:ellipsize="end"
+                    android:textSize="16sp"
+                    android:layout_weight="0.5"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="match_parent"
+                    android:hint="User Name"
+                    android:singleLine="true"
+                    android:textColor="#fff"
+                    android:layout_marginBottom="5dp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    local:MvxBind="Text requestedUser"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:id="@+id/username_text"
+                    android:gravity="left"
+                    android:layout_column="0"
+                    android:autoText="false"
+                    android:ellipsize="end"
+                    android:textSize="14sp"
+                    android:layout_weight="0.5"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="match_parent"
+                    android:hint="User Name"
+                    android:singleLine="true"
+                    android:textColor="#e6e6e6"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_weight="0.3"
+                android:orientation="vertical"
                 android:layout_column="1"
-                android:includeFontPadding="true"
-                android:layout_width="150dp"
-                android:autoText="false"
-                android:ellipsize="end"
-                android:phoneNumber="false"
-                android:password="false"
-                android:textSize="16dp" />
-            <TextView
-                local:MvxBind="Text time"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:id="@+id/username_text"
-                android:gravity="left"
-                android:includeFontPadding="true"
-                android:layout_width="150dp"
-                android:autoText="false"
-                android:ellipsize="end"
-                android:phoneNumber="false"
-                android:password="false"
-                android:textSize="16dp" />
-            <TextView
-                local:MvxBind="Text status"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:id="@+id/username_text"
-                android:gravity="left"
-                android:includeFontPadding="true"
-                android:layout_width="150dp"
-                android:autoText="false"
-                android:ellipsize="end"
-                android:phoneNumber="false"
-                android:password="false"
-                android:textSize="16dp" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+                <TextView
+                    local:MvxBind="Text time"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:id="@+id/username_text"
+                    android:gravity="center"
+                    android:ellipsize="end"
+                    android:textSize="12sp"
+                    android:layout_width="match_parent"
+                    android:hint="Date"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    local:MvxBind="Text status"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:id="@+id/username_text"
+                    android:gravity="center"
+                    android:ellipsize="end"
+                    android:textSize="14sp"
+                    android:layout_width="match_parent"
+                    android:hint="Status"
+                    android:autoText="false"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
         </TableRow>
     </TableLayout>
 </LinearLayout>
