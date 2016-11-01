@@ -23,13 +23,14 @@
             android:gravity="center"
             android:elevation="5dp"
             android:showDividers="none"
-            android:contextClickable="true">
+            android:contextClickable="true"
+            android:minHeight="60dp">
             <TextView
                 local:MvxBind="Text requesterUser"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:id="@+id/username_text"
                 android:gravity="left"
-                android:layout_column="1"
+                android:layout_column="0"
                 android:includeFontPadding="true"
                 android:layout_width="150dp"
                 android:autoText="false"
@@ -37,6 +38,12 @@
                 android:phoneNumber="false"
                 android:password="false"
                 android:textSize="16dp" />
+            <TextView
+                local:MvxBind="Text time"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_column="1"
+                android:id="@+id/textView1"
+                android:hint="Date" />
         </TableRow>
     </TableLayout>
 </LinearLayout>
