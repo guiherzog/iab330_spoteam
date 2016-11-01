@@ -23,14 +23,18 @@ namespace Spoteam.Core.ViewModels
 
         public void Init() {
             UserName = Settings.UserName;
+			user.email = Settings.UserEmail;
             user.teamId = Settings.TeamId;
             listUsers(user);
         }
         public void Init(User user) {
             UserName = user.name;
             this.user = user;
+			this.user.email = Settings.UserEmail;
             listUsers(user);
+
         }
+
         public override void Start()
 		{
 			base.Start();
@@ -42,7 +46,22 @@ namespace Spoteam.Core.ViewModels
                 users = result.rows;
                 UserList = new ObservableCollection<User>(users);
                 UserSearchList = UserList;
+
+				Debug.WriteLine("User Email "+this.user.email);
+				foreach (var u in UserList)
+				{
+					Debug.WriteLine(u);
+					if (u.email == this.user.email)
+					{
+						this.user.status = u.status;
+						UserList.Remove(u);
+						UserStatus = this.user.status;
+						break;
+					}
+				}
+
             }
+
         }
 
         public string UserName {
@@ -54,6 +73,20 @@ namespace Spoteam.Core.ViewModels
                 }
             }
         }
+
+		private string _status = "";
+		public string UserStatus
+		{
+			get { return _status; }
+			set
+			{
+				if (value != null && value != _status)
+				{
+					_status = value;
+					RaisePropertyChanged(() => UserStatus);
+				}
+			}
+		}
 
         public string UserImg {
             get { return _img; }
