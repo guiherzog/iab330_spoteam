@@ -45,7 +45,10 @@ namespace Spoteam.Core
                 Settings.TeamId = user.teamId;
             }
 			else {
-				LoginMessage = result.message;
+				if (result == null)
+					LoginMessage = "Server Error. Check your internet connection";
+				else
+					LoginMessage = result.message;
 				toggleErrorMessage();
                 Debug.WriteLine("Error: Check your account and team id.");
 			}
