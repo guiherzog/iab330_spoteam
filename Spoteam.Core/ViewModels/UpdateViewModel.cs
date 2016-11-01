@@ -41,10 +41,47 @@ namespace Spoteam.Core
 
             if (result != null && result.status == "success") {
                 ShowViewModel<TeamPageViewModel>();
-            } else
-                Debug.WriteLine("Error: Check your location name and connection.");
+            } 
+			else {
+
+				if (result == null)
+					UpdateMessage = "Server Error. Check your internet connection";
+				else
+					UpdateMessage = result.message;
+				toggleErrorMessage();
+				Debug.WriteLine("Error: Check your account and team id.");
+			}
 
         }
+
+
+		// Show error messages when trying to update location;
+		private bool _boolInViewModel = false;
+		public bool BoolInViewModel
+		{
+			get { return _boolInViewModel; }
+			set { _boolInViewModel = value; RaisePropertyChanged(() => BoolInViewModel); }
+		}
+
+		private void toggleErrorMessage()
+		{
+			BoolInViewModel = !BoolInViewModel;
+		}
+
+
+		private string _updateMessage;
+		public string UpdateMessage
+		{
+			get { return _updateMessage; }
+			set
+			{
+				if (value != null && value != _updateMessage)
+				{
+					_updateMessage = value;
+					RaisePropertyChanged(() => UpdateMessage);
+				}
+			}
+		}
 
 		// Requests called on the bottom buttons
 		public ICommand RequestsPageCommand

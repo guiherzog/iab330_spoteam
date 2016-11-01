@@ -32,6 +32,16 @@
             android:layout_marginRight="20dp"
             android:hint="Location"
             local:MvxBind="Text UserLocation" />
+        <TextView
+            android:text="Message Label"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/updateMessage"
+            android:gravity="center"
+            android:textColor="#ffd05353"
+            local:MvxBind="Visibility Visibility(BoolInViewModel); Text UpdateMessage"
+            android:visibility="invisible" />
         <Button
             android:text="Update"
             android:layout_width="match_parent"
