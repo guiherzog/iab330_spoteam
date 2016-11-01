@@ -46,9 +46,10 @@
     <Compile Include="Model\Team.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\RequestDetailsViewModel.cs" />
     <Compile Include="ViewModels\TeamPageViewModel.cs" />
     <Compile Include="Utils\SpoteamAPI.cs" />
-    <Compile Include="ViewModels\SecondViewModel.cs" />
+    <Compile Include="ViewModels\LocationDetailsViewModel.cs" />
     <Compile Include="ViewModels\ProfilePageViewModel.cs" />
     <Compile Include="ViewModels\GroupPageViewModel.cs" />
     <Compile Include="ViewModels\LocationAcceptedViewModel.cs" />
@@ -58,7 +59,9 @@
     <Compile Include="ViewModels\UpdateViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MvvmCross.Binding, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">

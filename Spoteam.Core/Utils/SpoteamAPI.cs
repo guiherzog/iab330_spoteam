@@ -4,6 +4,7 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Spoteam.Core.Models;
+using System.Diagnostics;
 
 namespace Spoteam.Core.Utils
 {
@@ -33,6 +34,19 @@ namespace Spoteam.Core.Utils
 			}
 		}
 
+        public async Task<MessageResult> CreateRequest(Request request) {
+            string URL = String.Format("{0}/create/request?requesterUser={1}&requestedUser={2}&status={3}", server, request.requesterUser, request.requestedUser, request.status);
+            Debug.WriteLine(URL);
+            var uri = new Uri(URL);
+            var response = await client.GetAsync(uri);
+            if (response.IsSuccessStatusCode) {
+                string content = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<MessageResult>(content);
+            } else {
+                return null;
+            }
+        }
+
         public async Task<MessageResult> UpdateUserLocation(string userEmail, string newLocation) {
             GetLocationResult result = (GetLocationResult) await Get("location", "name", newLocation);
             if (result != null && result.status == "success" && result.rows.Count > 0) {
@@ -45,6 +59,18 @@ namespace Spoteam.Core.Utils
                 } else {
                     return null;
                 }
+            } else {
+                return null;
+            }
+        }
+
+        public async Task<MessageResult> UpdateRequest(string requesterUser, string requestedUser, string status) {
+            string URL = String.Format("{0}/request?requester={1}&requested={2}&status={3}", server, requesterUser, requestedUser, status);
+            var uri = new Uri(URL);
+            var response = await client.GetAsync(uri);
+            if (response.IsSuccessStatusCode) {
+                string content = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<MessageResult>(content);
             } else {
                 return null;
             }

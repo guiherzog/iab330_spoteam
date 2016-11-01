@@ -44,25 +44,14 @@ namespace Spoteam.Core
             }
         }
 
-        public ICommand AcceptRequestCommand
-		{
-			get
-			{
-				Debug.WriteLine("Accepted Request");
-				return new MvxCommand(() => ShowViewModel<TeamPageViewModel>(new { test = "123" }));
-			}
-		}
-		public ICommand DenyRequestCommand
-		{
-			get
-			{
-				Debug.WriteLine("Deny Request");	
-				return new MvxCommand(() => ShowViewModel<TeamPageViewModel>(new { test = "123" }));
-			}
-		}
+        public ICommand SelectRequestCommand {
+            get {
+                return new MvxCommand<Request>(selectedRequest => ShowViewModel<RequestDetailsViewModel>(selectedRequest));
+            }
+        }
 
-		// Requests called on the bottom buttons
-		public ICommand RequestsPageCommand
+        // Requests called on the bottom buttons
+        public ICommand RequestsPageCommand
 		{
 			get
 			{

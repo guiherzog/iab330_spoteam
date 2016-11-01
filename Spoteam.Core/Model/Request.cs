@@ -11,5 +11,8 @@
             this.time = time;
             this.status = status;
         }
+
+        public Request() {
+        }
     }
 }
