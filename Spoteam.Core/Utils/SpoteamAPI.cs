@@ -67,7 +67,7 @@ namespace Spoteam.Core.Utils
 
 		public async Task<MessageResult> CreateLocation(Location location)
 		{
-			string URL = String.Format("{0}/create/location?name={1}", server, location.name);
+			string URL = String.Format("{0}/create/location?name={1}&nfc={2}", server, location.name, location.nfc);
 			var uri = new Uri(URL);
 			var response = await client.GetAsync(uri);
 			if (response.IsSuccessStatusCode)

@@ -18,6 +18,7 @@ namespace Spoteam.Core
 		private string _location = "";
 		private string _buttonText = "Update";
 		private string ButtonType = "update";
+		private string _nfcID = "";
 
         private SpoteamAPI api = new SpoteamAPI();
 		private readonly MvxSubscriptionToken _token;
@@ -27,25 +28,33 @@ namespace Spoteam.Core
 			_token = messenger.Subscribe<NFCMessage>(OnNFCMessage);			
 		}
 
+		public void OnNFCMessage(NFCMessage msg)
+		{
+			_nfcID = msg.ID;
+			UpdateLocationNFC();
+		}
+
+
 		IToast toast = Mvx.Resolve<IToast>();
 		
-		public async void OnNFCMessage(NFCMessage msg)
+		public async void UpdateLocationNFC()
 		{
-			Debug.WriteLine(msg.ID);
-			MessageResult result = await api.UpdateUserLocationNFC(Settings.UserEmail, msg.ID);
+			Debug.WriteLine(_nfcID);
+			MessageResult result = await api.UpdateUserLocationNFC(Settings.UserEmail, _nfcID);
 
 			if (result != null && result.status == "success")
 			{
 				toast.Show("Location updated to "+result.message+".");
+				ShowViewModel<TeamPageViewModel>();
 			}
 			else {
 				if (result == null)
 					UpdateMessage = "Server Error. Check your internet connection";
 				else if (result.status == "error")
 				{
-					ButtonType = "create";
-					ButtonText = "Create & Update";
-					UpdateMessage = result.message + " Want to create this location ?";
+					ButtonType = "create-nfc";
+					ButtonText = "Create NFC Location";
+					UpdateMessage = result.message + " Want to create a location for this NFC Tag?";
 				}
 				toggleErrorMessage();
 			}
@@ -89,7 +98,10 @@ namespace Spoteam.Core
 			if (ButtonType == "update")
 				UpdateLocation();
 			else
-				CreateLocation();
+				if (ButtonType == "create-nfc")
+					CreateLocationNFC();
+				else
+					CreateLocation();
 		}
 
         public async void UpdateLocation() {
@@ -111,6 +123,23 @@ namespace Spoteam.Core
 			}
 
         }
+
+		public async void CreateLocationNFC()
+		{
+			Debug.WriteLine("Creating a new location with NFC" + UserLocation);
+			MessageResult result = await api.CreateLocation(new Location(0, UserLocation, _nfcID));
+
+			if (result != null && result.status == "success")
+			{
+				toast.Show("Location added successfully, updating your location.");
+				UpdateLocationNFC();
+			}
+			else {
+				if (result == null)
+					UpdateMessage = "Server Error. Check your internet connection";
+				toggleErrorMessage();
+			}
+		}
 
 		public async void CreateLocation()
 		{
