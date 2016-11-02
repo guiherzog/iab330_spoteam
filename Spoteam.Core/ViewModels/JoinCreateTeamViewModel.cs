@@ -7,6 +7,8 @@ using Spoteam.Core.Models;
 using Spoteam.Core.Utils;
 using Spoteam.Core.ViewModels;
 using Spoteam.Core.Helpers;
+using MvvmCross.Plugins.Messenger;
+using MvvmCross.Platform;
 
 namespace Spoteam.Core
 {
@@ -16,8 +18,23 @@ namespace Spoteam.Core
 		private string _code = "";
 		private string _name = "";
 
+		private string _nfcID = "";
+		
 		private User user = new User();
 		private SpoteamAPI spoteamAPI = new SpoteamAPI();
+
+		private readonly MvxSubscriptionToken _token;
+
+		public JoinCreateTeamViewModel(IMvxMessenger messenger)
+		{
+			_token = messenger.Subscribe<NFCMessage>(OnNFCMessage);
+		}
+
+		public void OnNFCMessage(NFCMessage msg)
+		{
+			_nfcID = msg.ID;
+			JoinUserNFC();
+		}
 
 		public void Init()
 		{
@@ -36,12 +53,40 @@ namespace Spoteam.Core
 			}
 		}
 
+
 		public ICommand JoinTeamCommand
 		{
 			get
 			{
 				return new MvxCommand(JoinUser);
 			}
+		}
+
+		IToast toast = Mvx.Resolve<IToast>();
+
+
+		public async void JoinUserNFC()
+		{
+
+			MessageResult result = await spoteamAPI.UpdateUserTeamNFC(user.email, _nfcID);
+
+			Debug.WriteLine("Joining User: " + user.email + " via nfc: " + _nfcID);
+			Debug.WriteLine(result.message);
+
+			if (result != null && result.status == "success")
+			{
+				Settings.TeamId = Int32.Parse(result.message);
+				toast.Show("Joined successfully on Team with code: " + result.message);
+				ShowViewModel<TeamPageViewModel>();
+			}
+			else {
+				if (result == null)
+					JoinMessage = "Server Error. Check your internet connection";
+				else
+					JoinMessage = "NFC Tag not registered. Create your team now with it!";
+				toggleErrorMessage();
+			}
+
 		}
 
 		public async void JoinUser()
@@ -52,7 +97,7 @@ namespace Spoteam.Core
 			Debug.WriteLine("Joining User: " + user.email + " on team: " + TeamCode);
 
 	        if (result != null && result.status == "success") {
-	             ShowViewModel<TeamPageViewModel>(user);
+	             ShowViewModel<TeamPageViewModel>();
 	     	     Settings.TeamId = Int32.Parse(TeamCode);
 	        }
 			else {
@@ -63,17 +108,14 @@ namespace Spoteam.Core
 				toggleErrorMessage();
 			             Debug.WriteLine("Error: Check your account and team id.");
 			}
-
 		}
 
 
 		public async void CreateTeam()
 		{
-			Team team = new Team(Int32.Parse(TeamCode), TeamName, "", "");
+			Team team = new Team(Int32.Parse(TeamCode), TeamName, "", _nfcID);
 
 			MessageResult result = await spoteamAPI.CreateTeam(team);
-
-			Debug.WriteLine("Creating Team: " + team.name + " with code: " + team.id);
 
 			if (result != null && result.status == "success")
 			{
@@ -85,11 +127,9 @@ namespace Spoteam.Core
 				else
 					JoinMessage = result.message;
 				toggleErrorMessage();
-				Debug.WriteLine("Error: Check team id.");
 			}
 
 		}
-
 
 
 		private bool _boolInViewModel = false; 

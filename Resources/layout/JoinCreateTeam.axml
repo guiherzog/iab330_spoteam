@@ -7,14 +7,6 @@
     android:background="#343740"
     android:id="@+id/linearLayout1"
     android:gravity="center">
-    <ImageView
-        android:src="@drawable/icon"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView1"
-        android:layout_weight="1"
-        android:padding="10dp"
-        android:layout_marginTop="30dp" />
     <TextView
         android:text="Create a New Team"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -25,6 +17,14 @@
         android:gravity="center_horizontal"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp" />
+    <TextView
+        android:text="To Create a Team with a NFC Card, tap it before clicking on Create"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4"
+        android:gravity="center"
+        android:padding="5dp" />
     <EditText
         android:inputType="textPersonName"
         android:layout_width="match_parent"

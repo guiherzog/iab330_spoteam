@@ -165,8 +165,8 @@ namespace Spoteam_App
 			// aapt resource value: 0x7f040020
 			public const int imageView2 = 2130968608;
 			
-			// aapt resource value: 0x7f040014
-			public const int joinButton = 2130968596;
+			// aapt resource value: 0x7f040015
+			public const int joinButton = 2130968597;
 			
 			// aapt resource value: 0x7f040011
 			public const int linearLayout1 = 2130968593;
@@ -213,8 +213,8 @@ namespace Spoteam_App
 			// aapt resource value: 0x7f04000c
 			public const int tableRow4 = 2130968588;
 			
-			// aapt resource value: 0x7f040013
-			public const int teamCode = 2130968595;
+			// aapt resource value: 0x7f040014
+			public const int teamCode = 2130968596;
 			
 			// aapt resource value: 0x7f040003
 			public const int textView1 = 2130968579;
@@ -225,11 +225,11 @@ namespace Spoteam_App
 			// aapt resource value: 0x7f040005
 			public const int textView3 = 2130968581;
 			
-			// aapt resource value: 0x7f040017
-			public const int textView4 = 2130968599;
+			// aapt resource value: 0x7f040012
+			public const int textView4 = 2130968594;
 			
-			// aapt resource value: 0x7f040015
-			public const int tnameText = 2130968597;
+			// aapt resource value: 0x7f040016
+			public const int tnameText = 2130968598;
 			
 			// aapt resource value: 0x7f040023
 			public const int updateButton = 2130968611;
@@ -240,14 +240,14 @@ namespace Spoteam_App
 			// aapt resource value: 0x7f040026
 			public const int updateText = 2130968614;
 			
-			// aapt resource value: 0x7f040016
-			public const int userEmail = 2130968598;
+			// aapt resource value: 0x7f040017
+			public const int userEmail = 2130968599;
 			
 			// aapt resource value: 0x7f040027
 			public const int userLocation = 2130968615;
 			
-			// aapt resource value: 0x7f040012
-			public const int userName = 2130968594;
+			// aapt resource value: 0x7f040013
+			public const int userName = 2130968595;
 			
 			// aapt resource value: 0x7f040009
 			public const int username_text = 2130968585;

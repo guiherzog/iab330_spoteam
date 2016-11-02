@@ -34,6 +34,31 @@ namespace Spoteam.Core.Utils
 			}
 		}
 
+		public async Task<MessageResult> UpdateUserTeamNFC(string userEmail, string NFC)
+		{
+			GetTeamResult result = (GetTeamResult)await Get("team", "nfc", NFC);
+			if (result != null && result.status == "success" && result.rows.Count > 0)
+			{
+				string URL = String.Format("{0}/set/user/email?value={1}&teamId={2}", server, userEmail, result.rows[0].id);
+				var uri = new Uri(URL);
+				var response = await client.GetAsync(uri);
+				if (response.IsSuccessStatusCode)
+				{
+					string content = await response.Content.ReadAsStringAsync();
+					MessageResult msg = JsonConvert.DeserializeObject<MessageResult>(content);
+					msg.message = result.rows[0].id.ToString();
+					return msg;
+				}
+				else {
+					return null;
+				}
+			}
+			else {
+				if (result.rows.Count == 0)
+					return new MessageResult("error", "NFC Tag not registered for a Team.");
+				return null;
+			}
+		}
 		public async Task<MessageResult> UpdateUserTeam(string userEmail, string teamCode)
 		{
 			string URL = String.Format("{0}/set/user/email?value={1}&teamId={2}", server, userEmail, teamCode);
@@ -82,7 +107,7 @@ namespace Spoteam.Core.Utils
 
 		public async Task<MessageResult> CreateTeam(Team team)
 		{
-			string URL = String.Format("{0}/create/team?name={1}&id={2}", server, team.name, team.id);
+			string URL = String.Format("{0}/create/team?name={1}&id={2}&nfc={3}", server, team.name, team.id, team.nfc);
 			var uri = new Uri(URL);
 			var response = await client.GetAsync(uri);
 			if (response.IsSuccessStatusCode)
