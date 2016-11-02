@@ -27,13 +27,6 @@ namespace Spoteam.Core.ViewModels
             user.teamId = Settings.TeamId;
             listUsers(user);
         }
-        public void Init(User user) {
-            UserName = user.name;
-            this.user = user;
-			this.user.email = Settings.UserEmail;
-            listUsers(user);
-
-        }
 
         public override void Start()
 		{
@@ -44,6 +37,7 @@ namespace Spoteam.Core.ViewModels
             GetUserResult result = (GetUserResult) await api.Get("user", "teamId", user.teamId.ToString());
             if (result != null && result.status == "success") {
                 users = result.rows;
+				Debug.WriteLine(users.Count);
                 UserList = new ObservableCollection<User>(users);
                 UserSearchList = UserList;
 

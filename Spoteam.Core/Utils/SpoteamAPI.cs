@@ -129,6 +129,31 @@ namespace Spoteam.Core.Utils
                 return null;
             }
         }
+		public async Task<MessageResult> UpdateUserLocationNFC(string userEmail, string NFC)
+		{
+			GetLocationResult result = (GetLocationResult)await Get("location", "nfc", NFC);
+			if (result != null && result.status == "success" && result.rows.Count > 0)
+			{
+				string URL = String.Format("{0}/set/user/email?value={1}&locationId={2}", server, userEmail, result.rows[0].id);
+				var uri = new Uri(URL);
+				var response = await client.GetAsync(uri);
+				if (response.IsSuccessStatusCode)
+				{
+					string content = await response.Content.ReadAsStringAsync();
+					MessageResult msg = JsonConvert.DeserializeObject<MessageResult>(content);
+					msg.message = result.rows[0].name;
+					return msg;
+				}
+				else {
+					return null;
+				}
+			}
+			else {
+				if (result.rows.Count == 0)
+					return new MessageResult("error", "NFC Tag not registered.");
+				return null;
+			}
+		}
 
         public async Task<MessageResult> UpdateUserLocation(string userEmail, string newLocation) {
             GetLocationResult result = (GetLocationResult) await Get("location", "name", newLocation);

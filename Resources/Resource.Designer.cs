@@ -159,9 +159,6 @@ namespace Spoteam_App
 			// aapt resource value: 0x7f040006
 			public const int btn_tryagain = 2130968582;
 			
-			// aapt resource value: 0x7f040029
-			public const int createButton = 2130968617;
-			
 			// aapt resource value: 0x7f040002
 			public const int imageView1 = 2130968578;
 			

@@ -7,15 +7,51 @@ using Spoteam.Core.Utils;
 using Spoteam.Core.Model;
 using Spoteam.Core.Helpers;
 
+
+using MvvmCross.Plugins.Messenger;
+using MvvmCross.Platform;
+
 namespace Spoteam.Core
 {
 	public class UpdateViewModel : MvxViewModel
 	{
-		private string _location = "Room Name";
+		private string _location = "";
 		private string _buttonText = "Update";
 		private string ButtonType = "update";
 
         private SpoteamAPI api = new SpoteamAPI();
+		private readonly MvxSubscriptionToken _token;
+
+		public UpdateViewModel(IMvxMessenger messenger)
+		{
+			_token = messenger.Subscribe<NFCMessage>(OnNFCMessage);			
+		}
+
+		IToast toast = Mvx.Resolve<IToast>();
+		
+		public async void OnNFCMessage(NFCMessage msg)
+		{
+			Debug.WriteLine(msg.ID);
+			MessageResult result = await api.UpdateUserLocationNFC(Settings.UserEmail, msg.ID);
+
+			if (result != null && result.status == "success")
+			{
+				toast.Show("Location updated to "+result.message+".");
+			}
+			else {
+				if (result == null)
+					UpdateMessage = "Server Error. Check your internet connection";
+				else if (result.status == "error")
+				{
+					ButtonType = "create";
+					ButtonText = "Create & Update";
+					UpdateMessage = result.message + " Want to create this location ?";
+				}
+				toggleErrorMessage();
+			}
+
+		}
+
 
 		public string UserLocation
 		{

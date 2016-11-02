@@ -19,10 +19,6 @@ namespace Spoteam.Core
 		private User user = new User();
 		private SpoteamAPI spoteamAPI = new SpoteamAPI();
 
-		public void Init(User user)
-		{
-			this.user = user;
-		}
 		public void Init()
 		{
 			this.user.email = Settings.UserEmail;
