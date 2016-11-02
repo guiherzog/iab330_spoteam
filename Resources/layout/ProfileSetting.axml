@@ -58,6 +58,16 @@
             android:layout_gravity="center"
             android:textColor="#000"
             android:layout_margin="20dp" />
+        <Button
+            android:text="Logout"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:id="@+id/btn_accept"
+            local:MvxBind="Click LogoutCommand"
+            android:backgroundTint="#efefef"
+            android:layout_gravity="center"
+            android:textColor="#000"
+            android:layout_margin="20dp" />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"

@@ -48,8 +48,10 @@ namespace Spoteam.Core.ViewModels
 					if (u.email == this.user.email)
 					{
 						this.user.status = u.status;
+						this.user.locationId = u.locationId;
 						UserList.Remove(u);
 						UserStatus = this.user.status;
+						setUserLocation();
 						break;
 					}
 				}
@@ -57,6 +59,17 @@ namespace Spoteam.Core.ViewModels
             }
 
         }
+
+		public async void setUserLocation()
+		{
+			GetLocationResult location = (GetLocationResult)await api.Get("location", "id", this.user.locationId.ToString());
+			if (location != null && location.status == "success")
+			{
+				UserLocation = location.rows[0].name;
+			}
+
+		}
+
 
         public string UserName {
             get { return _name; }
@@ -67,6 +80,20 @@ namespace Spoteam.Core.ViewModels
                 }
             }
         }
+
+		private string _location;
+		public string UserLocation
+		{
+			get { return _location; }
+			set
+			{
+				if (value != null && value != _location)
+				{
+					_location = value;
+					RaisePropertyChanged(() => UserLocation);
+				}
+			}
+		}
 
 		private string _status = "";
 		public string UserStatus

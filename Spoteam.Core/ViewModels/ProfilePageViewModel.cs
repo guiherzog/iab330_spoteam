@@ -17,13 +17,37 @@ namespace Spoteam.Core
 
 		private async void updateStatus()
 		{
-			MessageResult result = await api.UpdateUserStatus(Settings.UserEmail, SelectedItem.Value);
+			updateStatus(SelectedItem.Value);
+		}
+
+		private async void updateStatus(string value)
+		{
+			MessageResult result = await api.UpdateUserStatus(Settings.UserEmail, value);
 			if (result != null && result.status == "success")
 			{
-				toast.Show("Status succesfully updated.");
+				if (value == "offline")
+					logout();
+				else
+					toast.Show("Status succesfully updated.");
 			}
 			else {
 				toast.Show("Error updating status. Check your connection.");
+			}
+		}
+
+		public void logout()
+		{
+			Settings.TeamId = 0;
+			Settings.UserName = string.Empty;
+			Settings.UserEmail = string.Empty;
+			ShowViewModel<LoginRegisterAccountViewModel>();
+		}
+
+		public ICommand LogoutCommand
+		{
+			get
+			{
+				return new MvxCommand(() => updateStatus("offline"));
 			}
 		}
 
@@ -60,7 +84,6 @@ namespace Spoteam.Core
 		   new Thing("Available","available"),
 		   new Thing("Request Only","request"),
 		   new Thing("Busy","busy"),
-		   new Thing("Offline","offline"),
 		};
 		public List<Thing> Items
 		{

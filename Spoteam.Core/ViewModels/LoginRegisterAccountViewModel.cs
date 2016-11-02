@@ -51,10 +51,14 @@ namespace Spoteam.Core
 				if (result.rows.Count > 0)
 				{
 					User user = result.rows[0];
-					ShowViewModel<TeamPageViewModel>(user);
 					Settings.UserName = user.name;
 					Settings.UserEmail = user.email;
 					Settings.TeamId = (int) user.teamId;
+
+					// After loggining, change the user's status to request.
+					updateStatus("request");
+					ShowViewModel<TeamPageViewModel>(user);
+					
 				}
 				else {
 					LoginMessage = "Email or Password invalid.";
@@ -68,6 +72,11 @@ namespace Spoteam.Core
 				toggleErrorMessage();
 				Debug.WriteLine("Error: Check your account and team id.");
 			}
+		}
+
+		private async void updateStatus(string value)
+		{
+			MessageResult result = await spoteamAPI.UpdateUserStatus(Settings.UserEmail, value);
 		}
 
 		public async void CreateUser()
