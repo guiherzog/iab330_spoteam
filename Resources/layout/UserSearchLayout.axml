@@ -26,13 +26,6 @@
             android:gravity="center"
             android:layout_margin="10dp"
             android:padding="5dp">
-            <ImageView
-                android:layout_width="150px"
-                android:layout_height="150px"
-                local:MvxBind="DrawableName img"
-                android:layout_column="0"
-                android:layout_marginRight="10.0dp"
-                android:padding="5dp" />
             <TextView
                 android:textSize="20sp"
                 local:MvxBind="Text name"
