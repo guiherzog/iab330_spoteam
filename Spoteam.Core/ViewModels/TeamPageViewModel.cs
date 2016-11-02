@@ -65,7 +65,8 @@ namespace Spoteam.Core.ViewModels
 			GetLocationResult location = (GetLocationResult)await api.Get("location", "id", this.user.locationId.ToString());
 			if (location != null && location.status == "success")
 			{
-				UserLocation = location.rows[0].name;
+				if (location.rows.Count > 0)
+					UserLocation = location.rows[0].name;
 			}
 
 		}
