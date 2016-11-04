@@ -27,8 +27,10 @@ namespace Spoteam.Core
 			{
 				if (value == "offline")
 					logout();
-				else
+				else {
 					toast.Show("Status succesfully updated.");
+					ShowViewModel<TeamPageViewModel>();
+				}
 			}
 			else {
 				toast.Show("Error updating status. Check your connection.");
