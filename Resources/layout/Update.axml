@@ -24,6 +24,28 @@
             android:gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp" />
+        <TextView
+            android:text="Tap a NFC Location Card to update your location"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView1"
+            android:gravity="center"
+            android:autoText="true" />
+        <TextView
+            android:text="or"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:gravity="center" />
+        <TextView
+            android:text="Enter the exact location name below"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3"
+            android:gravity="center" />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
